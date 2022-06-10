@@ -15,10 +15,10 @@
 
     @foreach ($categories as $category)
         @php
-            $fullUrl = 'http://localhost/?category=' . $category->slug;
+            $categoryUrl = 'http://localhost/?category=' . $category->slug;
         @endphp
         
-        <x-dropdown-item href="/?category={{$category->slug}}&{{http_build_query(request()->except('category', 'page'))}}" :active="request()->fullUrlIs($fullUrl)">
+        <x-dropdown-item href="/?category={{$category->slug}}&{{http_build_query(request()->except('category', 'page'))}}" :active="request()->fullUrlIs($categoryUrl)">
         {{ ucwords($category->name) }}
         </x-dropdown-item>
     @endforeach

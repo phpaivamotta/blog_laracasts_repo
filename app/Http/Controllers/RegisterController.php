@@ -38,9 +38,7 @@ class RegisterController extends Controller
         // otherwise, set profile pic to generic picture in public>images
         if(isset($attributes['profile_pic'])){
             $attributes['profile_pic'] = request()->file('profile_pic')->store('profile_pics');
-        } else {
-            $attributes['profile_pic'] = "profile_pics/generic_profile_pic.png";
-        }
+        } 
 
         // create the user with validated attributes
         $user = User::create($attributes);

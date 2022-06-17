@@ -4,14 +4,19 @@
 
     <div class="flex-shrink-0">
         <!-- <img src="https://i.pravatar.cc/60?u={{ $comment->user_id }}" alt="" width="60" height="60" class="rounded-xl"> -->
-        <img src="{{ asset('storage/' . $comment->author->profile_pic)  }}" alt="" width="60" height="60" class="rounded-xl">
+
+        <!-- change -->
+        <img src="{{ isset($comment->author->profile_pic) ? 
+                     asset('storage/' . $comment->author->profile_pic) :
+                     '/images/generic_profile_pic.png' }}" alt="" width="60" height="60" class="rounded-xl">
+        <!-- end change -->
     </div>
 
     <div>
         <header class="mb-4">
             <h3 class="font-bold">{{$comment->author->username}}</h3>
             <p class="text-xs">
-                Posted 
+                Posted
                 <time>{{$comment->created_at->diffForHumans()}}</time>
             </p>
         </header>

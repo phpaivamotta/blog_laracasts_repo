@@ -31,8 +31,13 @@
 
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
-                    <!-- <img src="/images/lary-avatar.svg" alt="Lary avatar"> -->
-                    <img src="{{ asset('storage/' . $post->author->profile_pic) }}" alt="Profile Picture" height="55" width="55" style="border-radius:20%">
+
+                    <!-- change -->
+                    <img src="{{ isset($post->author->profile_pic) ? 
+                     asset('storage/' . $post->author->profile_pic) :
+                     '/images/generic_profile_pic.png' }}" alt="" width="60" height="60" class="rounded-xl">
+                    <!-- end change -->
+
                     <div class="ml-3">
                         <h5 class="font-bold"><a href="/?author={{$post->author->username}}">{{$post->author->name}}</a></h5>
                     </div>

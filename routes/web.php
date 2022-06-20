@@ -13,7 +13,7 @@ use App\Http\Controllers\NewsletterController;
 Route::get('/', [PostController::class, 'index'])->name('home');
 
 // single post
-Route::get('posts/{post:slug}', [PostController::class, 'show']);
+Route::get('posts/{post:slug}', [PostController::class, 'show'])->middleware('visitor.count');
 Route::post('posts/{post:slug}/comments', [PostCommentController::class, 'store']);
 
 // mailchimp API setup
@@ -25,8 +25,6 @@ Route::get('register', [RegisterController::class, 'create'])->middleware('guest
 
 // store user input data into database 
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
-
-// testing
 Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 

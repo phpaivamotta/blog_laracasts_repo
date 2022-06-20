@@ -9,7 +9,7 @@
                         Published <time> {{ $post->created_at->diffForHumans() }} </time>
                     </p>
 
-                    <div class="flex items-center lg:justify-center text-sm mt-4">
+                    <div class="flex items-center lg:justify-left text-sm mt-4">
 
                         <!-- change -->
                         <img src="{{ isset($post->author->profile_pic) ? 

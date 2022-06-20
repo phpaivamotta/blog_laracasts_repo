@@ -20,7 +20,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/logo_scrshot_blog_laracasts.png" alt="Poliana Porcelana Logo" width="320" height="32">
+                    <img src="/images/poliana_porcelana_logo_adobe_official.png" alt="Poliana Porcelana Logo" width="300">
                 </a>
             </div>
 

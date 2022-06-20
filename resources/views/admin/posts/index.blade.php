@@ -14,6 +14,18 @@
                                             </a>
                                         </td>
                                       
+                                        <td class="flex text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                            <img src="/images/eye_icon_image_blog_laracasts.png" alt="eye logo" width="19" height="19">
+
+                                            <p class="text-black ml-2">
+                                                {{ $visitors
+                                                    ->where('post_id', $post->id)
+                                                    ->unique('ip')
+                                                    ->count()
+                                                 }}
+                                            </p>
+                                        </td>
+
                                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                             <a href="/admin/posts/{{$post->id}}/edit" class="text-blue-300 hover:text-indigo-900">Edit</a>
                                         </td>

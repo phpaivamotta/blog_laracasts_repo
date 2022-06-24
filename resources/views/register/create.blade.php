@@ -8,11 +8,11 @@
                 <form method="POST" action="/cadastro" enctype="multipart/form-data" class="mt-10">
                     @csrf
 
-                    <x-form.input name="name" type="text"/>
-                    <x-form.input name="username" type="text"/>
-                    <x-form.input name="email" type="email"/>
-                    <x-form.input name="profile_pic" type="file"/>
-                    <x-form.input name="password" type="password"/>
+                    <x-form.input name="name" type="text" id="Nome"/>
+                    <x-form.input name="username" type="text" id="Nome de Usuário"/>
+                    <x-form.input name="email" type="email" id="Email"/>
+                    <x-form.input name="profile_pic" type="file" id="Foto de Perfil"/>
+                    <x-form.input name="password" type="password" id="Senha"/>
 
                     <x-form.button>Enviar</x-form.button>
 

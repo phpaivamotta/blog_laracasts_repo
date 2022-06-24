@@ -31,6 +31,6 @@
 </x-panel>
 @else
 <p class="font-semibold">
-    <a href="/cadastro" class="hover:underline">Cadastre-se</a> ou faça o <a href="/login" class="hover:underline">login</a> para deixar um comentário.
+    <a href="/cadastro" class="hover:underline text-blue-500">Cadastre-se</a> ou faça o <a href="/login" class="hover:underline text-blue-500">login</a> para deixar um comentário.
 </p>
 @endauth

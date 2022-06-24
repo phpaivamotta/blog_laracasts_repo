@@ -3,15 +3,15 @@
         <form method="POST" action="/admin/posts" enctype="multipart/form-data">
             @csrf 
             
-            <x-form.input name="title" />
-            <x-form.input name="slug" />
-            <x-form.input name="thumbnail" type="file"/>
-            <x-form.textarea name="excerpt" />
-            <x-form.textarea name="body" rows="12"/>
+            <x-form.input name="title" id="Título"/>
+            <x-form.input name="slug" id="Slug"/>
+            <x-form.input name="thumbnail" type="file" id="Miniatura"/>
+            <x-form.textarea name="excerpt" id="Excerto"/>
+            <x-form.textarea name="body" rows="12" id="Corpo"/>
             
             <x-form.field>
 
-                <x-form.label name="category" />
+                <x-form.label name="Categoria"/>
 
                 <select name="category_id" id="category_id">
                     @php
@@ -32,7 +32,7 @@
 
             </x-form.field>
 
-            <x-form.button> Publish </x-form.button> 
+            <x-form.button> Publicar </x-form.button> 
 
         </form>
     </x-setting>

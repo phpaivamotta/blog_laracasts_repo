@@ -1,7 +1,7 @@
-@props(['name'])
+@props(['name', 'id'])
 
 <x-form.field>
-    <x-form.label name="{{$name}}"/>
+    <x-form.label name="{{$id}}"/>
 
     <textarea class="border border-gray-400 p-2 w-full"
         name="{{$name}}"

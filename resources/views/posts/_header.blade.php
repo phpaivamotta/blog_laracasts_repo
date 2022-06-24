@@ -20,7 +20,7 @@
 
                 <input type="text" 
                      name="search" 
-                     placeholder="Find something"
+                     placeholder="Buscar"
                      class="bg-transparent placeholder-black font-semibold text-sm"
                      value="{{request('search')}}">
             </form>

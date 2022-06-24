@@ -21,10 +21,10 @@ Route::post('newsletter', NewsletterController::class);
 
 // register 
 // note: middleware('guest') ensures only guests can see 'register' page 
-Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
+Route::get('cadastro', [RegisterController::class, 'create'])->middleware('guest');
 
 // store user input data into database 
-Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
+Route::post('cadastro', [RegisterController::class, 'store'])->middleware('guest');
 Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 

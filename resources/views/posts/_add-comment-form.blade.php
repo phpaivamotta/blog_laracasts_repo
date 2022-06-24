@@ -12,7 +12,7 @@
                          '/images/generic_profile_pic.png'  }}" alt="" width="60" height="60" class="rounded-xl">
             <!-- end change -->
 
-            <h2 class="ml-4"> Join the discussion. </h2>
+            <h2 class="ml-4"> Participe da discussão. </h2>
         </header>
 
         <div class="mt-6">
@@ -24,13 +24,13 @@
         </div>
 
         <div class="flex justify-end mt-6 pt-6">
-            <x-form.button>Post</x-form.button>
+            <x-form.button>Postar</x-form.button>
         </div>
 
     </form>
 </x-panel>
 @else
 <p class="font-semibold">
-    <a href="/register" class="hover:underline">Register</a> or <a href="/login" class="hover:underline">login</a> to leave a comment.
+    <a href="/cadastro" class="hover:underline">Cadastre-se</a> ou faça o <a href="/login" class="hover:underline">login</a> para deixar um comentário.
 </p>
 @endauth

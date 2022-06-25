@@ -33,8 +33,8 @@
                     </x-slot>
 
                     @if(auth()->user()->can('admin'))
-                        <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">Painel</x-dropdown-item>
-                        <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">Novo Post</x-dropdown-item>
+                        <x-dropdown-item href="/admin/painel" :active="request()->is('admin/painel')">Painel</x-dropdown-item>
+                        <x-dropdown-item href="/admin/posts/criar" :active="request()->is('admin/posts/criar')">Novo Post</x-dropdown-item>
                     @endif
 
 

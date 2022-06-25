@@ -27,7 +27,7 @@
                                         </td>
 
                                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                            <a href="/admin/posts/{{$post->id}}/edit" class="text-blue-300 hover:text-indigo-900">Editar</a>
+                                            <a href="/admin/posts/{{$post->id}}/editar" class="text-blue-300 hover:text-indigo-900">Editar</a>
                                         </td>
 
                                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">

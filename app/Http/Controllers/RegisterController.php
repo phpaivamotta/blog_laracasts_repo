@@ -48,6 +48,6 @@ class RegisterController extends Controller
 
         // redirect user to homepage after creating a profile
         // and flash a message saying account has been created successfully
-        return redirect('/')->with('success', 'Your account has been created.');
+        return redirect('/')->with('success', 'Sua conta foi criada!');
     }
 }

@@ -33,11 +33,12 @@
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
 
-                    <!-- change -->
-                    <img src="{{ isset($post->author->profile_pic) ? 
-                     asset('storage/' . $post->author->profile_pic) :
-                     '/images/generic_profile_pic.png' }}" alt="" width="60" height="60" class="rounded-xl">
-                    <!-- end change -->
+                    <a href="/?autor={{$post->author->username}}">
+                        <img src="{{ isset($post->author->profile_pic) ? 
+                        asset('storage/' . $post->author->profile_pic) :
+                        '/images/generic_profile_pic.png' }}" alt="" width="60" height="60" class="rounded-xl">
+                    </a>
+
 
                     <div class="ml-3">
                         <h5 class="font-bold"><a href="/?autor={{$post->author->username}}">{{$post->author->name}}</a></h5>

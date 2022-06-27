@@ -4,7 +4,6 @@
         @csrf
 
         <header class="flex items-center">
-            <!-- <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}" alt="" width="40" height="40" class="rounded-full"> -->
 
             <!-- change -->
             <img src="{{ isset(auth()->user()->profile_pic) ? 

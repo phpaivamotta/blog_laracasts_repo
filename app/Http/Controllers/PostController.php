@@ -16,7 +16,7 @@ class PostController extends Controller
         Session::put('blog_url', request()->fullUrl());
         
         return view('posts.index', [
-            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(6)->withQueryString()
+            'posts' => Post::latest()->filter(request(['search', 'author']))->paginate(6)->withQueryString()
         ]);
     }
 

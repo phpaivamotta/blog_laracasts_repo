@@ -37,7 +37,7 @@ class SessionController extends Controller
         }
 
         throw ValidationException::withMessages([
-            'email' => 'Your provided credentials could not be validated.'
+            'email' => 'Suas credencias não puderam ser validadas.'
         ]);
     }
 

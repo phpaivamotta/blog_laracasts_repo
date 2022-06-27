@@ -9,7 +9,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\NewsletterController;
 
 
-// all posts or filtered posts (filtered by category, seach, or author)
+// all posts or filtered posts (filtered by seach, or author)
 Route::get('/', [PostController::class, 'index'])->name('home');
 
 // single post

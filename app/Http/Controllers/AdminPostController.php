@@ -31,16 +31,12 @@ class AdminPostController extends Controller
             'slug' => ['required', Rule::unique('posts', 'slug')],
             'excerpt' => 'required',
             'body' => 'required',
-            'category_id' => ['required', Rule::exists('categories', 'id')]
         ]);
 
         // append the user_id value to the $attributes array so that a new Post instance can be created
         $attributes['user_id'] = auth()->id();
         // store thumbnail file path in $attributes array
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-        // transform \n characters into <br> characters for better readability
-        // $attributes['body'] = str_replace("\n", "<br>", $attributes['body']);
-
         // instantiate a new post
         $post = Post::create($attributes);
 
@@ -61,7 +57,6 @@ class AdminPostController extends Controller
             'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post->id)],
             'excerpt' => 'required',
             'body' => 'required',
-            'category_id' => ['required', Rule::exists('categories', 'id')]
         ]);
         
         if(isset($attributes['thumbnail'])){

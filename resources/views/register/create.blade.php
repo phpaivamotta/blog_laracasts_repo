@@ -14,7 +14,7 @@
                     <x-form.input name="profile_pic" type="file" id="Foto de Perfil"/>
                     <x-form.input name="password" type="password" id="Senha"/>
 
-                    <x-form.button>Enviar</x-form.button>
+                    <x-form.button>Cadastrar</x-form.button>
 
                 </form>  
             </x-panel>  

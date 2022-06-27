@@ -11,7 +11,7 @@ class Post extends Model
 
     protected $guarded =[];
 
-    protected $with =['category', 'author'];
+    protected $with =['author'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -32,24 +32,12 @@ class Post extends Model
                 )
             );
 
-        // filter the category 
-        $query->when($filters['category'] ?? false, fn($query, $category) => 
-            $query->whereHas('category', fn($query) => 
-                $query->where('slug', $category)
-            )
-        );
-
         // filter the author 
         $query->when($filters['author'] ?? false, fn($query, $author) => 
             $query->whereHas('author', fn($query) => 
                 $query->where('username', $author)
             )
         );
-    }
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
     }
 
     public function author()

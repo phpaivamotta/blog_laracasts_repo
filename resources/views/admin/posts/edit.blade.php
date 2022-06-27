@@ -18,26 +18,6 @@
             <x-form.textarea name="excerpt" id="Excerto">{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
             <x-form.textarea name="body" rows="12" id="Corpo">{{ old('body', $post->body) }}</x-form.textarea>
 
-            <x-form.field>
-
-                <x-form.label name="Categoria" />
-
-                <select name="category_id" id="category_id">
-                    @php
-                    $categories = \App\Models\Category::all();
-                    @endphp
-
-                    @foreach($categories as $category)
-                    <option value="{{$category->id}}" {{ old('category_id', $post->category_id) == $category->id ? 'selected' : '' }}>
-                        {{ ucwords($category->name) }}
-                    </option>
-                    @endforeach
-                </select>
-
-                <x-form.error name="category" />
-
-            </x-form.field>
-
             <x-form.button> Atualizar </x-form.button>
 
         </form>

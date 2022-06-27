@@ -38,9 +38,6 @@
                             Voltar aos Posts
                         </a>
 
-                        <div class="space-x-2">
-                            <x-category-button :category='$post->category' />
-                        </div>
                     </div>
 
                     <h1 class="font-bold text-3xl lg:text-4xl mb-10">

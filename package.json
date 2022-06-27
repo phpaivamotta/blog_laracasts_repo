@@ -13,6 +13,12 @@
         "axios": "^0.25",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "postcss": "^8.4.14"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-paste-from-office": "^34.1.0",
+        "@tailwindcss/aspect-ratio": "^0.4.0",
+        "autoprefixer": "^10.4.7",
+        "tailwindcss": "^3.1.4"
     }
 }

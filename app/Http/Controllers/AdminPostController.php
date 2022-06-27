@@ -39,12 +39,12 @@ class AdminPostController extends Controller
         // store thumbnail file path in $attributes array
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
         // transform \n characters into <br> characters for better readability
-        $attributes['body'] = str_replace("\n", "<br>", $attributes['body']);
+        // $attributes['body'] = str_replace("\n", "<br>", $attributes['body']);
 
         // instantiate a new post
         $post = Post::create($attributes);
 
-        return redirect('posts/'.$post->slug)->with('success', 'Your post has been created.');
+        return redirect('posts/'.$post->slug)->with('success', 'Seu post foi criado!');
     }
 
     public function edit(Post $post)
@@ -72,7 +72,7 @@ class AdminPostController extends Controller
         $post->update($attributes);
 
         // return back()->with('success', 'Post updated!');
-        return redirect('posts/'.$post->slug)->with('success', 'Post updated!');
+        return redirect('posts/'.$post->slug)->with('success', 'Post atualizado!');
 
     }
 
@@ -80,6 +80,6 @@ class AdminPostController extends Controller
     {
         $post->delete();
 
-        return back()->with('success', 'Post deleted!');
+        return back()->with('success', 'Post deletado!');
     }
 }

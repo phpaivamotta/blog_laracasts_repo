@@ -21,10 +21,10 @@ Route::post('newsletter', NewsletterController::class);
 
 // register 
 // note: middleware('guest') ensures only guests can see 'register' page 
-Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
+Route::get('cadastro', [RegisterController::class, 'create'])->middleware('guest');
 
 // store user input data into database 
-Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
+Route::post('cadastro', [RegisterController::class, 'store'])->middleware('guest');
 Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
@@ -32,9 +32,9 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
 
 // Admin 
-Route::get('admin/posts', [AdminPostController::class, 'index'])->middleware('admin');
-Route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit'])->middleware('admin');
-Route::get('admin/posts/create', [AdminPostController::class, 'create'])->middleware('admin');
+Route::get('admin/painel', [AdminPostController::class, 'index'])->middleware('admin');
+Route::get('admin/posts/{post}/editar', [AdminPostController::class, 'edit'])->middleware('admin');
+Route::get('admin/posts/criar', [AdminPostController::class, 'create'])->middleware('admin');
 Route::post('admin/posts', [AdminPostController::class, 'store'])->middleware('admin');
 Route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->middleware('admin');
 Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin');

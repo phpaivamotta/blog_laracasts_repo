@@ -14,7 +14,7 @@ class SessionController extends Controller
     {
         auth()->logout();
 
-        return redirect('/')->with('success', 'Goodbye');
+        return redirect('/')->with('success', 'Tchau Tchau :(');
     }
 
     // directs user to login page
@@ -33,7 +33,7 @@ class SessionController extends Controller
 
         if(auth()->attempt($attributes)){
             session()->regenerate();
-            return redirect('/')->with('success', 'Welcome back!');
+            return redirect('/')->with('success', 'Ebaa! Bem-vindo(a) de volta :D');
         }
 
         throw ValidationException::withMessages([

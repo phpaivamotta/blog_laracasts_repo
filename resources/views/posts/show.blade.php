@@ -6,7 +6,7 @@
                     <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl">
 
                     <p class="mt-4 block text-gray-400 text-xs">
-                        Published <time> {{ $post->created_at->diffForHumans() }} </time>
+                        Publicado <time> {{ $post->created_at->diffForHumans() }} </time>
                     </p>
 
                     <div class="flex items-center lg:justify-left text-sm mt-4">
@@ -35,7 +35,7 @@
                                 </g>
                             </svg>
 
-                            Back to Posts
+                            Voltar aos Posts
                         </a>
 
                         <div class="space-x-2">
@@ -50,6 +50,7 @@
                     <div class="space-y-4 lg:text-lg leading-loose">
                         {!! $post->body !!}
                     </div>
+
                 </div>
 
                 <section class="col-span-8 col-start-5 mt-10 space-y-5">

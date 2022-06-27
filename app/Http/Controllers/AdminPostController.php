@@ -39,7 +39,7 @@ class AdminPostController extends Controller
         // store thumbnail file path in $attributes array
         $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
         // transform \n characters into <br> characters for better readability
-        $attributes['body'] = str_replace("\n", "<br>", $attributes['body']);
+        // $attributes['body'] = str_replace("\n", "<br>", $attributes['body']);
 
         // instantiate a new post
         $post = Post::create($attributes);

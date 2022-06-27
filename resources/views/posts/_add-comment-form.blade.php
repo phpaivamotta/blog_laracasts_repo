@@ -16,7 +16,7 @@
         </header>
 
         <div class="mt-6">
-            <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" rows="5" placeholder="Type your comment here." required></textarea>
+            <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" rows="5" placeholder="Digite seu comentário aqui." required></textarea>
 
             @error('body')
             <span class="text-red-500 text-xs"> {{ $message }} </span>

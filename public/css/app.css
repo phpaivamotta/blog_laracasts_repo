@@ -300,6 +300,16 @@ menu {
   padding: 0;
 }
 
+.ck.ck-content ul,
+.ck.ck-content ul li{
+  list-style-type: inherit;
+}
+
+.ck.ck-content ul {
+  /* Default user agent stylesheet, you can change it to your needs. */
+  padding-left: 40px;
+}
+
 /*
 Prevent resizing textareas horizontally by default.
 */
@@ -513,23 +523,6 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.aspect-w-1 {
-  position: relative;
-  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-  --tw-aspect-w: 1;
-}
-.aspect-w-1 > * {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.aspect-h-1 {
-  --tw-aspect-h: 1;
-}
 .pointer-events-none {
   pointer-events: none;
 }
@@ -591,6 +584,9 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-20 {
+  margin-top: 5rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -605,9 +601,6 @@ video {
 }
 .mt-6 {
   margin-top: 1.5rem;
-}
-.mt-20 {
-  margin-top: 5rem;
 }
 .mb-10 {
   margin-bottom: 2.5rem;
@@ -660,14 +653,17 @@ video {
 .w-full {
   width: 100%;
 }
-.w-48 {
-  width: 12rem;
-}
 .w-5 {
   width: 1.25rem;
 }
+.w-48 {
+  width: 12rem;
+}
 .min-w-full {
   min-width: 100%;
+}
+.max-w-lg {
+  max-width: 32rem;
 }
 .max-w-4xl {
   max-width: 56rem;
@@ -677,9 +673,6 @@ video {
 }
 .max-w-6xl {
   max-width: 72rem;
-}
-.max-w-lg {
-  max-width: 32rem;
 }
 .flex-1 {
   flex: 1 1 0%;

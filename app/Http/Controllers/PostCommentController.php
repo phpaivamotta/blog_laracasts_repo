@@ -19,6 +19,6 @@ class PostCommentController extends Controller
             'body' => request('body') 
         ]);    
 
-        return back();
+        return redirect()->to(url()->previous() . '#comments');
     }
 }

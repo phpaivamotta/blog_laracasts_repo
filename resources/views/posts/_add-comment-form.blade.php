@@ -5,11 +5,10 @@
 
         <header class="flex items-center">
 
-            <!-- change -->
             <img src="{{ isset(auth()->user()->profile_pic) ? 
                          asset('storage/' . auth()->user()->profile_pic) : 
-                         '/images/generic_profile_pic.png'  }}" alt="" width="60" height="60" class="rounded-xl">
-            <!-- end change -->
+                         '/images/generic_profile_pic.png'  }}" alt="Foto de Perfil" class="rounded-xl square">
+
 
             <h2 class="ml-4"> Participe da discussão. </h2>
         </header>

@@ -300,6 +300,17 @@ menu {
   padding: 0;
 }
 
+
+.ck.ck-content ol,
+.ck.ck-content ol li{
+  list-style-type: decimal;
+}
+
+.ck.ck-content ol {
+  /* Default user agent stylesheet, you can change it to your needs. */
+  padding-left: 40px;
+}
+
 .ck.ck-content ul,
 .ck.ck-content ul li{
   list-style-type: inherit;
@@ -308,6 +319,11 @@ menu {
 .ck.ck-content ul {
   /* Default user agent stylesheet, you can change it to your needs. */
   padding-left: 40px;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
 }
 
 /*

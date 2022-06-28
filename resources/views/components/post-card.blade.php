@@ -35,7 +35,7 @@
                     <a href="/?autor={{$post->author->username}}">
                         <img src="{{ isset($post->author->profile_pic) ? 
                         asset('storage/' . $post->author->profile_pic) :
-                        '/images/generic_profile_pic.png' }}" alt="" width="60" height="60" class="rounded-xl">
+                        '/images/generic_profile_pic.png' }}" alt="Foto de Perfil" class="rounded-xl square">
                     </a>
 
                     <div class="ml-3">

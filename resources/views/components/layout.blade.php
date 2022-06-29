@@ -26,11 +26,14 @@
             </div>
 
             <div class="mt-8 md:mt-0 flex items-center">
+
+                <a href="#" class="text-sm font-bold">Sobre</a>
+
                 @auth
                 <x-dropdown>
 
                     <x-slot name="trigger">
-                        <button class="text-sm font-bold" name="trigger">Bem-vindo(a), {{ auth()->user()->name }}</button>
+                        <button class="text-sm font-bold ml-6" name="trigger">Bem-vindo(a), {{ auth()->user()->name }}</button>
                     </x-slot>
 
                     @if(auth()->user()->can('admin'))
@@ -48,13 +51,14 @@
                 </x-dropdown>
 
                 @else
-                <a href="/cadastro" class="text-sm font-bold uppercase">Cadastre-se</a>
-                <a href="/login" class="text-sm font-bold uppercase ml-6">Login</a>
+                <a href="/cadastro" class="text-sm font-bold ml-6">Cadastre-se</a>
+                <a href="/login" class="text-sm font-bold ml-6">Login</a>
                 @endauth
 
-                <a href="#newsletter" class="bg-blue-500 ml-6 rounded-full text-sm font-semibold text-white uppercase py-3 px-5">
-                    Inscreva-se para atualizações
+                <a href="#newsletter" class="bg-blue-500 ml-6 rounded-full text-sm font-semibold text-white py-3 px-5">
+                    Inscreva-se
                 </a>
+
             </div>
         </nav>
 

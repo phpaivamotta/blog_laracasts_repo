@@ -16,7 +16,7 @@
             </div>
 
             <x-form.textarea name="excerpt" id="Excerto">{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
-            <x-form.textarea name="body" rows="12" id="Corpo">{{ old('body', $post->body) }}</x-form.textarea>
+            <x-form.textarea name="body" id="Corpo">{{ old('body', $post->body) }}</x-form.textarea>
 
             <x-form.button> Atualizar </x-form.button>
 

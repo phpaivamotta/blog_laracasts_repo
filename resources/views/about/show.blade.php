@@ -6,7 +6,7 @@
 
                     <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Foto de Perfil" class="rounded-xl">
 
-                    <div class="flex items-center text-lg mt-4">
+                    <div class="flex items-center text-lg mt-10">
 
                         <div class="ml-3 text-left">
                             <h5 class="font-bold">{{$user->name}}</h5>

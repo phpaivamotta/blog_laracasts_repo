@@ -9,15 +9,14 @@
         <aside class="w-48">
             <h4 class="font-semibold mb-4">Links</h4>
 
-            <ul>
-                <li>
-                    <a href="/admin/painel" class="{{ request()->is('admin/painel') ? 'text-blue-500' : ''}}">Todos os Posts</a>
-                </li>
+            <div>
+                <a href="/admin/painel" class="{{ request()->is('admin/painel') ? 'text-blue-500' : ''}} text-left">Todos os Posts</a>
+            </div>
 
-                <li>
-                    <a href="/admin/posts/criar" class="{{ request()->is('admin/posts/criar') ? 'text-blue-500' : ''}}">Novo Post</a>
-                </li>
-            </ul>
+            <div>
+                <a href="/admin/posts/criar" class="{{ request()->is('admin/posts/criar') ? 'text-blue-500' : ''}} text-left">Novo Post</a>
+            </div>
+
         </aside>
 
         <main class="flex-1">

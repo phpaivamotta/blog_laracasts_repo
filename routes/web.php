@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostLikeController;
+use App\Http\Controllers\AboutController;
 
 
 // all posts or filtered posts (filtered by seach, or author)
@@ -16,6 +17,9 @@ Route::get('/', [PostController::class, 'index'])->name('home');
 // single post
 Route::get('posts/{post:slug}', [PostController::class, 'show'])->middleware('visitor.count');
 Route::post('posts/{post:slug}/comments', [PostCommentController::class, 'store']);
+
+// About view
+Route::get('sobre', [AboutController::class, 'show']);
 
 // amar a post route 
 Route::post('posts/{post:slug}/amar', [PostLikeController::class, 'like'])->name('like');

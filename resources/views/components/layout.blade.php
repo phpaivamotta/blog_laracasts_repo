@@ -27,7 +27,7 @@
 
             <div class="mt-8 md:mt-0 flex items-center">
 
-                <a href="#" class="text-sm font-bold">Sobre</a>
+                <a href="/sobre" class="text-sm font-bold">Sobre</a>
 
                 @auth
                 <x-dropdown>

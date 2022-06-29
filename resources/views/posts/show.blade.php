@@ -11,14 +11,14 @@
 
                     <div class="flex items-center lg:justify-left text-sm mt-4">
 
-                        <!-- change -->
-                        <img src="{{ isset($post->author->profile_pic) ? 
+                        <a href="/sobre">
+                            <img src="{{ isset($post->author->profile_pic) ? 
                                      asset('storage/' . $post->author->profile_pic) :
                                      '/images/generic_profile_pic.png' }}" alt="Foto de Perfil" class="rounded-xl square">
-                        <!-- end change -->
+                        </a>
 
                         <div class="ml-3 text-left">
-                            <h5 class="font-bold"><a href="/?author={{$post->author->username}}">{{$post->author->name}}</a></h5>
+                            <h5 class="font-bold"><a href="/sobre">{{$post->author->name}}</a></h5>
                         </div>
                     </div>
                 </div>

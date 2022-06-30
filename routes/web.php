@@ -24,6 +24,9 @@ Route::get('sobre', [AboutController::class, 'show']);
 // amar a post route 
 Route::post('posts/{post:slug}/amar', [PostLikeController::class, 'like'])->name('like');
 
+// easteregg
+Route::view('easteregg', 'easteregg.easteregg');
+
 // mailchimp API setup
 Route::post('newsletter', NewsletterController::class);
 

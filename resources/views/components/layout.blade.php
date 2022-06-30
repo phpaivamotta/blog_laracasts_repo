@@ -27,13 +27,13 @@
 
             <div class="mt-8 md:mt-0 flex items-center">
 
-                <a href="/sobre" class="text-sm font-bold">Sobre</a>
+                <a href="/sobre" class="text-sm font-bold transition-colors duration-300 hover:text-blue-500">Sobre</a>
 
                 @auth
                 <x-dropdown>
 
                     <x-slot name="trigger">
-                        <button class="text-sm font-bold ml-6" name="trigger">Bem-vindo(a), {{ auth()->user()->name }}</button>
+                        <button class="text-sm font-bold ml-6 transition-colors duration-300 hover:text-blue-500" name="trigger">Bem-vindo(a), {{ auth()->user()->name }}</button>
                     </x-slot>
 
                     @if(auth()->user()->can('admin'))
@@ -51,11 +51,11 @@
                 </x-dropdown>
 
                 @else
-                <a href="/cadastro" class="text-sm font-bold ml-6">Cadastre-se</a>
-                <a href="/login" class="text-sm font-bold ml-6">Login</a>
+                <a href="/cadastro" class="text-sm font-bold ml-6 transition-colors duration-300 hover:text-blue-500">Cadastre-se</a>
+                <a href="/login" class="text-sm font-bold ml-6 transition-colors duration-300 hover:text-blue-500">Login</a>
                 @endauth
 
-                <a href="#newsletter" class="bg-blue-500 ml-6 rounded-full text-sm font-semibold text-white py-3 px-5">
+                <a href="#newsletter" class="bg-blue-500 ml-6 rounded-full text-sm font-semibold text-white py-3 px-5 transition-colors duration-300 hover:bg-blue-600">
                     Inscreva-se
                 </a>
 

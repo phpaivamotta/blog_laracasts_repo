@@ -37,8 +37,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Gate::define('admin', function(User $user){
 
-            // return $user->username == 'phpaivamotta';
-            return in_array($user->username, ['phpaivamotta', 'jessicaszklarz']);
+            return in_array($user->username, ['jessicaszklarz']);
 
         });
 

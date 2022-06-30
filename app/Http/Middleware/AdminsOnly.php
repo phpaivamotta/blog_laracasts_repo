@@ -24,7 +24,7 @@ class AdminsOnly
             abort(Response::HTTP_FORBIDDEN);
         }
 
-        $admins = ['phpaivamotta', 'jessicaszklarz'];
+        $admins = ['jessicaszklarz'];
                                    
 
         // check to see if a registered user OTHER THAN the admin is trying to log in

@@ -6,7 +6,7 @@
         <!-- change -->
         <img src="{{ isset($comment->author->profile_pic) ? 
                      asset('storage/' . $comment->author->profile_pic) :
-                     '/images/generic_profile_pic.png' }}" alt="" width="60" height="60" class="rounded-xl">
+                     '/images/generic_profile_pic.png' }}" alt="Foto de Perfil" class="rounded-xl square">
         <!-- end change -->
     </div>
 

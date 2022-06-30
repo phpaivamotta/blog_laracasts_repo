@@ -3,24 +3,17 @@
         <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
             <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
                 <div class="col-span-4 lg:text-center lg:pt-14 mb-10">
-                    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl">
 
-                    <p class="mt-4 block text-gray-400 text-xs">
-                        Publicado <time> {{ $post->created_at->diffForHumans() }} </time>
-                    </p>
+                    <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Foto de Perfil" class="rounded-xl">
 
-                    <div class="flex items-center lg:justify-left text-sm mt-4">
-
-                        <a href="/sobre">
-                            <img src="{{ isset($post->author->profile_pic) ? 
-                                     asset('storage/' . $post->author->profile_pic) :
-                                     '/images/generic_profile_pic.png' }}" alt="Foto de Perfil" class="rounded-xl square">
-                        </a>
+                    <div class="flex items-center text-lg mt-10">
 
                         <div class="ml-3 text-left">
-                            <h5 class="font-bold"><a href="/sobre">{{$post->author->name}}</a></h5>
+                            <h5 class="font-bold">{{$user->name}}</h5>
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="col-span-8">
@@ -41,24 +34,14 @@
                     </div>
 
                     <h1 class="font-bold text-3xl lg:text-4xl mb-10">
-                        {{$post->title}}
+                        Sobre Poliana Porcelana
                     </h1>
 
                     <div class="space-y-4 lg:text-lg leading-loose">
-                        {!! $post->body !!}
+                        {!! $user->about->body !!}
                     </div>
 
-                    <x-like-button :post="$post" />
-
                 </div>
-
-                <section class="col-span-8 col-start-5 mt-8 space-y-5">
-                    @include('posts._add-comment-form')
-
-                    @foreach($post->comment as $comment)
-                    <x-post-comment :comment='$comment' />
-                    @endforeach
-                </section>
 
             </article>
         </main>

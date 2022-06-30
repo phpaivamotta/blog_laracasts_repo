@@ -57,6 +57,26 @@
                                     </td>
                                 </tr>
                                 @endforeach
+
+                                <!-- about table row -->
+                                <tr class="justify-between bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                    <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
+                                        <a href="/sobre">
+                                            Sobre Poliana Porcelana
+                                        </a>
+                                    </td>
+
+                                    <td></td>
+
+                                    <td></td>
+
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        <a href="/admin/sobre/editar" class="text-blue-300 hover:text-indigo-900">Editar</a>
+                                    </td>
+
+                                    <td></td>
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>

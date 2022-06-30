@@ -8,8 +8,7 @@
                 <form method="POST" action="/login" class="mt-10">
                     @csrf
 
-
-                    <x-form.input name="email" type="email" autocomplete="username" id="Email"/>
+                    <x-form.input name="username" type="text" id="Nome de Usuário" autocomplete="username"/>
                     <x-form.input name="password" type="password" autocomplete="new-password" id="Senha"/>
 
                     <x-form.button>Login</x-form.button>

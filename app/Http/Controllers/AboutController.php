@@ -11,7 +11,7 @@ class AboutController extends Controller
     public function show()
     {
         return view('about.show', [
-            'user' => User::first()
+            'user' => User::where('username', '=', 'jessicaszklarz')->first()
         ]);
     }
 

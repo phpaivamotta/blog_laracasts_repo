@@ -629,6 +629,9 @@ video {
 .ml-2 {
   margin-left: 0.5rem;
 }
+.ml-1 {
+  margin-left: 0.25rem;
+}
 .mt-1 {
   margin-top: 0.25rem;
 }

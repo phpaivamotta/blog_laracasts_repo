@@ -67,7 +67,7 @@
 
         <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
 
-            <h5 class="text-3xl">Receba noticações de novos posts.</h5>
+            <h5 class="text-3xl">Receba notificações de novos posts.</h5>
 
             <div class="mt-10">
                 <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
@@ -94,7 +94,7 @@
                         </div>
 
                         <button type="submit" class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
-                            Inscreava-se
+                            Inscreva-se
                         </button>
                     </form>
                 </div>

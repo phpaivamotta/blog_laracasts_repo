@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\User as ModelsUser;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Validation\Rule;
 
 class SessionController extends Controller
 {
@@ -31,7 +32,7 @@ class SessionController extends Controller
             'password' => ['required']
         ]);
 
-        if(auth()->attempt($attributes)){
+        if (auth()->attempt($attributes)) {
             session()->regenerate();
             return redirect('/')->with('success', 'Ebaa! Bem-vindo(a) de volta :D');
         }
@@ -41,23 +42,32 @@ class SessionController extends Controller
         ]);
     }
 
-    // my solution
-    // public function login()
-    // {
-    //     $attributes = request()->validate([
-    //         'username' => ['required', 'min:3', 'max:255'],
-    //         'password' => ['required', 'min:7', 'max:255']
-    //     ]);
+    public function edit()
+    {
+        return view('profile.edit', [
+            'user' => request()->user()
+        ]);
+    }
 
-    //     $user = User::where('username', '=', $attributes['username'])
-    //                 ->where('password', '=', $attributes['password'])
-    //                 ->first();
+    public function update()
+    {
+        $attributes = request()->validate([
+            'name' => ['required', 'max:255'],
+            'username' => ['required', 'min:3', 'max:255', Rule::unique('users', 'username')->ignore(request()->user()->id)],
+            'profile_pic' => ['image'],
+        ]);
 
-    //     if($user){
-    //         auth()->login($user);
-    //         return redirect('/')->with('success', 'Welcome back, ' . $user->name);
-    //     } else {
-    //         return redirect('/login')->with('success', 'Sorry.');
-    //     }
-    // }
+        if (request('nopic')) 
+        {
+            $attributes['profile_pic'] = null;
+        }
+        elseif (isset($attributes['profile_pic'])) 
+        {
+            $attributes['profile_pic'] = request()->file('profile_pic')->store('profile_pics');
+        }
+
+        request()->user()->update($attributes);
+
+        return redirect('/')->with('success', 'Seu perfil foi atualizado!');
+    }
 }

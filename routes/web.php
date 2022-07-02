@@ -24,9 +24,6 @@ Route::get('sobre', [AboutController::class, 'show']);
 // amar a post route 
 Route::post('posts/{post:slug}/amar', [PostLikeController::class, 'like'])->name('like');
 
-// easteregg
-Route::view('ovo-de-páscoa', 'easteregg.easteregg')->middleware('auth');
-
 // mailchimp API setup
 Route::post('newsletter', NewsletterController::class);
 
@@ -55,5 +52,7 @@ Route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->midd
 Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin');
 Route::get('admin/sobre/editar', [AboutController::class, 'edit'])->middleware('admin');
 Route::patch('admin/sobre', [AboutController::class, 'update'])->middleware('admin');
+// easteregg
+Route::view('matzá', 'easteregg.easteregg')->middleware('admin');
 
 

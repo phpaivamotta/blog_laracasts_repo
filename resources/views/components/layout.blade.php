@@ -41,6 +41,7 @@
                     <x-dropdown-item href="/admin/posts/criar" :active="request()->is('admin/posts/criar')">Novo Post</x-dropdown-item>
                     @endif
 
+                    <x-dropdown-item href="/perfil/editar" :active="request()->is('perfil/editar')">Editar Perfil</x-dropdown-item>
 
                     <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Logout</x-dropdown-item>
 

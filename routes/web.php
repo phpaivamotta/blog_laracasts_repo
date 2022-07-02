@@ -25,7 +25,7 @@ Route::get('sobre', [AboutController::class, 'show']);
 Route::post('posts/{post:slug}/amar', [PostLikeController::class, 'like'])->name('like');
 
 // easteregg
-Route::view('easteregg', 'easteregg.easteregg');
+Route::view('ovo-de-páscoa', 'easteregg.easteregg')->middleware('auth');
 
 // mailchimp API setup
 Route::post('newsletter', NewsletterController::class);
@@ -41,6 +41,10 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
 // log user out
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+// user edit profile
+Route::get('perfil/editar', [SessionController::class, 'edit'])->middleware('auth');
+Route::patch('perfil', [SessionController::class, 'update'])->middleware('auth');
 
 // Admin 
 Route::get('admin/painel', [AdminPostController::class, 'index'])->middleware('admin');

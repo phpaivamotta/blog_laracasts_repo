@@ -74,8 +74,6 @@
                                             @method('DELETE')
 
                                             <button class="text-blue-300 hover:text-indigo-900">Deletar</button>
-
-
                                         </form>
                                     </td>
 

@@ -937,6 +937,9 @@ video {
 .text-left {
   text-align: left;
 }
+.text-rigth {
+  text-align: right;
+}
 .text-center {
   text-align: center;
 }

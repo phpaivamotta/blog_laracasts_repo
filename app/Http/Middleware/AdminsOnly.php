@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 class AdminsOnly
@@ -19,18 +20,14 @@ class AdminsOnly
     {
         // check to see if a guest (someone who is not signed in) is trying enter admin page
         // if so, abort with 403
-        if(auth()->guest()){
+        if (auth()->guest()) {
             abort(Response::HTTP_FORBIDDEN);
         }
 
-        $admins = ['jessicaszklarz'];
-                                   
-        $userIsAdmin = in_array(auth()->user()->username, $admins);
-
-        if(!$userIsAdmin){
+        if (Gate::denies('admin')) {
             abort(Response::HTTP_FORBIDDEN);
         }
-        
+
         return $next($request);
     }
 }

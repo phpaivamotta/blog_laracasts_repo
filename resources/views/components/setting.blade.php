@@ -10,11 +10,11 @@
             <h4 class="font-semibold mb-4">Links</h4>
 
             <div>
-                <a href="/admin/painel" class="{{ request()->is('admin/painel') ? 'text-blue-500' : ''}} text-left">Todos os Posts</a>
+                <a href="/admin/painel" class="{{ request()->is('admin/painel') ? 'text-blue-500' : ''}} text-left">Posts</a>
             </div>
 
             <div>
-                <a href="/admin/posts/criar" class="{{ request()->is('admin/posts/criar') ? 'text-blue-500' : ''}} text-left">Novo Post</a>
+                <a href="/admin/painel/usuários" class="{{ request()->is('admin/painel/usuários') ? 'text-blue-500' : ''}} text-left">Usuários</a>
             </div>
 
         </aside>

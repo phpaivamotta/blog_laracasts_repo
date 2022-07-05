@@ -21,7 +21,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/poliana_porcelana_logo_adobe_official.png" alt="Poliana Porcelana Logo" width="300">
+                    <img src="/images/logo_poliana_porcelana_blog.png" alt="Poliana Porcelana Logo" width="265">
                 </a>
             </div>
 

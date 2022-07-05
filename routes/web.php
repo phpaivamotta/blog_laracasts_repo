@@ -9,7 +9,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostLikeController;
 use App\Http\Controllers\AboutController;
-
+use App\Http\Controllers\AdminUserController;
 
 // all posts or filtered posts (filtered by seach, or author)
 Route::get('/', [PostController::class, 'index'])->name('home');
@@ -27,18 +27,17 @@ Route::post('posts/{post:slug}/amar', [PostLikeController::class, 'like'])->name
 // mailchimp API setup
 Route::post('newsletter', NewsletterController::class);
 
-// register 
+// REGISTER 
 // note: middleware('guest') ensures only guests can see 'register' page 
 Route::get('cadastro', [RegisterController::class, 'create'])->middleware('guest');
-
 // store user input data into database 
 Route::post('cadastro', [RegisterController::class, 'store'])->middleware('guest');
-Route::get('login', [SessionController::class, 'create'])->middleware('guest');
-Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
+//LOGIN
+Route::get('login', [SessionController::class, 'create'])->middleware('guest')->name('login');
+Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 // log user out
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
-
 // user edit profile
 Route::get('perfil/editar', [SessionController::class, 'edit'])->middleware('auth');
 Route::patch('perfil', [SessionController::class, 'update'])->middleware('auth');
@@ -52,6 +51,8 @@ Route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->midd
 Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy'])->middleware('admin');
 Route::get('admin/sobre/editar', [AboutController::class, 'edit'])->middleware('admin');
 Route::patch('admin/sobre', [AboutController::class, 'update'])->middleware('admin');
+Route::get('admin/painel/usuários', [AdminUserController::class, 'index'])->middleware('admin');
+Route::delete('admin/usuários/{user}', [AdminUserController::class, 'destroy'])->middleware('admin');
 // easteregg
 Route::view('matzá', 'easteregg.easteregg')->middleware('admin');
 

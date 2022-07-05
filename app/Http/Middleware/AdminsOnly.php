@@ -17,7 +17,6 @@ class AdminsOnly
      */
     public function handle(Request $request, Closure $next)
     {
-        
         // check to see if a guest (someone who is not signed in) is trying enter admin page
         // if so, abort with 403
         if(auth()->guest()){
@@ -26,14 +25,6 @@ class AdminsOnly
 
         $admins = ['jessicaszklarz'];
                                    
-
-        // check to see if a registered user OTHER THAN the admin is trying to log in
-        // if so, abort with 403
-
-        // if(auth()->user()->username !== 'phpaivamotta'){
-        //     abort(Response::HTTP_FORBIDDEN);
-        // }
-
         $userIsAdmin = in_array(auth()->user()->username, $admins);
 
         if(!$userIsAdmin){

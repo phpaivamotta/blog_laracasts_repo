@@ -325,6 +325,11 @@ menu {
   height: 60px;
 }
 
+.profile {
+  width: 200px;
+  height: 200px;
+}
+
 /*
 Prevent resizing textareas horizontally by default.
 */

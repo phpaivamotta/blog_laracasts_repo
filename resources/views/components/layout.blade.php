@@ -4,7 +4,7 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/translations/pt.js"></script>
-{{-- <script src="https://unpkg.com/turbolinks"></script>  --}}
+{{-- <script src="https://unpkg.com/turbolinks"></script> --}}
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -42,7 +42,7 @@
                             <x-dropdown-item href="/admin/posts/criar" :active="request()->is('admin/posts/criar')">Novo Post</x-dropdown-item>
                         @endadmin
 
-                        <x-dropdown-item href="/perfil/editar" :active="request()->is('perfil/editar')">Editar Perfil</x-dropdown-item>
+                        <x-dropdown-item href="/perfil/{{ auth()->user()->username }}" :active="request()->is('perfil/editar')">Perfil</x-dropdown-item>
 
                         <x-dropdown-item href="#" x-data="{}"
                             @click.prevent="document.querySelector('#logout-form').submit()">Logout</x-dropdown-item>

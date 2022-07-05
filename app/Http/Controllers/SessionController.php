@@ -70,4 +70,11 @@ class SessionController extends Controller
 
         return redirect('/')->with('success', 'Seu perfil foi atualizado!');
     }
+
+    public function show(User $user)
+    {
+        return view('profile.show', [
+            'user' => $user
+        ]);
+    }
 }

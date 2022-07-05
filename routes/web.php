@@ -39,9 +39,11 @@ Route::get('login', [SessionController::class, 'create'])->middleware('guest')->
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 // log user out
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
+// user view profile
+Route::get('perfil/{user:username}', [SessionController::class, 'show'])->middleware('auth');
 // user edit profile
-Route::get('perfil/editar', [SessionController::class, 'edit'])->middleware('auth');
-Route::patch('perfil', [SessionController::class, 'update'])->middleware('auth');
+Route::get('perfil/{user:username}/editar', [SessionController::class, 'edit'])->middleware('auth');
+Route::patch('perfil/{user:username}', [SessionController::class, 'update'])->middleware('auth');
 
 // Admin 
 Route::get('admin/painel', [AdminPostController::class, 'index'])->middleware('admin');

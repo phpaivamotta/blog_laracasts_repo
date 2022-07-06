@@ -5,7 +5,7 @@
                 <h1 class="text-center font-bold text-xl">Editar Perfil</h1>
 
                 <!-- user input form  -->
-                <form method="POST" action="/perfil" enctype="multipart/form-data" class="mt-10">
+                <form method="POST" action="/perfil/{{ $user->username }}" enctype="multipart/form-data" class="mt-10">
                     @csrf
                     @method('PATCH')
 

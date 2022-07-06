@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-class ConvertKitNwesletter implements Newsletter
+class ConvertKitNewsletter implements Newsletter
 {
     public function subscribe(string $email, string $list=null)
     {

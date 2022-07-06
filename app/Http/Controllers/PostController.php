@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Session;
+use Share;
 
 class PostController extends Controller
 {
 
     //this controller action gets posts (either for the home page as normal, or for the search results)
     public function index()
-    {   
+    {
         // store current session url so that it can be used in the 'Back to Posts' link in the posts.show view
         Session::put('blog_url', request()->fullUrl());
-        
+
         return view('posts.index', [
             'posts' => Post::latest()->filter(request(['search', 'author']))->paginate(6)->withQueryString()
         ]);
@@ -25,8 +26,13 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return view('posts.show', [
-            'post' => $post
+            'post' => $post,
+            'links' => Share::currentPage($post->title)
+                ->facebook()
+                ->linkedin()
+                ->whatsapp()
+                ->twitter()
+                ->getRawLinks()
         ]);
     }
-
 }

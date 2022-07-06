@@ -1,5 +1,4 @@
 <!doctype html>
-
 <title>Poliana Porcelana Blog</title>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
@@ -42,7 +41,8 @@
                             <x-dropdown-item href="/admin/posts/criar" :active="request()->is('admin/posts/criar')">Novo Post</x-dropdown-item>
                         @endadmin
 
-                        <x-dropdown-item href="/perfil/{{ auth()->user()->username }}" :active="request()->is('perfil/editar')">Perfil</x-dropdown-item>
+                        <x-dropdown-item href="/perfil/{{ auth()->user()->username }}" :active="request()->is('perfil/editar')">Perfil
+                        </x-dropdown-item>
 
                         <x-dropdown-item href="#" x-data="{}"
                             @click.prevent="document.querySelector('#logout-form').submit()">Logout</x-dropdown-item>

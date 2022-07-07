@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Session;
-use Share;
+use Jorenvh\Share\ShareFacade;
 
 class PostController extends Controller
 {
@@ -27,7 +26,7 @@ class PostController extends Controller
     {
         return view('posts.show', [
             'post' => $post,
-            'links' => Share::currentPage($post->title)
+            'links' => ShareFacade::currentPage($post->title)
                 ->facebook()
                 ->linkedin()
                 ->whatsapp()

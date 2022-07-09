@@ -25,12 +25,12 @@
         </p>
 
         @admin
-                <form method="POST" action="/admin/comentários/{{ $comment->id }}">
-                    @csrf
-                    @method('DELETE')
+            <form method="POST" action="/admin/comentários/{{ $comment->id }}" id="delete-comment-form" x-data @submit.prevent=" location.hash = '#modal' ">
+                @csrf
+                @method('DELETE')
 
-                    <button class="text-xs text-blue-300 hover:text-indigo-900">Deletar</button>
-                </form>
+                <button href="#modal" class="text-xs text-blue-300 hover:text-indigo-900">Deletar</button>
+            </form>
         @endadmin
 
     </div>

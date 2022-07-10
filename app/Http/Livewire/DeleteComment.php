@@ -10,6 +10,12 @@ class DeleteComment extends Component
 
     public $showDeleteCommentModal = false;
     public $comment;
+    public $comments;
+
+    public function mount()
+    {
+        $this->comments;
+    }
 
     public function destroyComment(Comment $comment)
     {

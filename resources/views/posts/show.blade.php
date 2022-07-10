@@ -135,10 +135,9 @@
                 <section class="col-span-8 col-start-5 mt-8 space-y-5">
                     @include('posts._add-comment-form')
 
-                    @foreach ($post->comment as $comment)
-                        @livewire('delete-comment', ['comment' => $comment])
-                    @endforeach
+                    @livewire('delete-comment', ['comments' => $post->comment])
                 </section>
+
             </article>
         </main>
     </section>

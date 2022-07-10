@@ -136,14 +136,10 @@
                     @include('posts._add-comment-form')
 
                     @foreach ($post->comment as $comment)
-                        <x-post-comment :comment='$comment' />
+                        @livewire('delete-comment', ['comment' => $comment])
                     @endforeach
                 </section>
             </article>
         </main>
     </section>
-
-    {{-- modal --}}
-    <x-modal>comentário</x-modal>
-
 </x-layout>

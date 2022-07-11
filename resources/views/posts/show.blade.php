@@ -135,7 +135,7 @@
                 <section class="col-span-8 col-start-5 mt-8 space-y-5">
                     @include('posts._add-comment-form')
 
-                    @livewire('delete-comment', ['comments' => $post->comment])
+                    @livewire('delete-comment', ['postId' => $post->id])
                 </section>
 
             </article>

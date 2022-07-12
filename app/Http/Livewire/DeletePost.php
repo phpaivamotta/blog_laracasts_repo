@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Models\Post;
 use App\Models\Visitor;
 use Livewire\Component;
-use Livewire\WithPagination;
 
 class DeletePost extends Component
 {

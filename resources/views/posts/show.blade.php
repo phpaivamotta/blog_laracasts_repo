@@ -70,7 +70,17 @@
                     </div>
 
                     <div class="flex items-center justify-between">
-                        <x-like-button :post="$post" />
+
+                        {{-- buttons --}}
+                        <div class="flex mt-8" id="likes">
+                            <div class="flex items-center text-white px-1">
+
+                                <x-like-button :post="$post" />
+
+                                <x-comment-button :post="$post"/>
+
+                            </div>
+                        </div>
 
                         {{-- share icon and dropdown --}}
                         <div x-data="{ show: false }" @click.away="show=false" class="mt-8">

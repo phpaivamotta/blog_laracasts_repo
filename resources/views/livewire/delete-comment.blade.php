@@ -1,4 +1,5 @@
 <div>
+
     @foreach ($comments as $comment)
         <form x-data>
             <article class="flex bg-gray-100 border border-gray-200 p-6 rounded-xl space-x-4" id="comments">
@@ -36,4 +37,5 @@
 
         </form>
     @endforeach
+
 </div>

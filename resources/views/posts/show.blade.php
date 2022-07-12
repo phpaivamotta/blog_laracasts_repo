@@ -75,9 +75,9 @@
                         <div class="flex mt-8" id="likes">
                             <div class="flex items-center text-white px-1">
 
-                                <x-like-button :post="$post" />
+                                @livewire('manage-likes', ['postId' => $post->id])
 
-                                <x-comment-button :post="$post"/>
+                                <x-comment-button :post="$post" />
 
                             </div>
                         </div>

@@ -9,7 +9,7 @@ use Livewire\Component;
 class DeleteComment extends Component
 {
 
-    public $showDeleteCommentModal = false;
+    public $modal = false;
     public $post;
     public $comments;
 
@@ -19,11 +19,11 @@ class DeleteComment extends Component
         $this->comments = $this->post->comment;
     }
 
-    public function destroyComment(Comment $comment)
+    public function destroy(Comment $object)
     {
-        $comment->delete();
+        $object->delete();
 
-        $this->showDeleteCommentModal = false;
+        $this->modal = false;
         $this->post = Post::find($this->post->id);
         $this->comments = $this->post->comment;
     }

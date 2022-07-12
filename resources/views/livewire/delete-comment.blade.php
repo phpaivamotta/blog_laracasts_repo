@@ -25,14 +25,14 @@
 
                     @admin
                         <button type="button" class="text-xs text-blue-300 hover:text-indigo-900"
-                            wire:click="$set('showDeleteCommentModal', true)">Deletar</button>
+                            wire:click="$set('modal', true)">Deletar</button>
                     @endadmin
 
                 </div>
 
             </article>
 
-            <x-modal wire:model.defer="showDeleteCommentModal" :comment="$comment">comentário</x-modal>
+            <x-modal wire:model.defer="modal" :object="$comment">comentário</x-modal>
 
         </form>
     @endforeach

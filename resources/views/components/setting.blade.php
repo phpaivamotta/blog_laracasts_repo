@@ -10,11 +10,13 @@
             <h4 class="font-semibold mb-4">Links</h4>
 
             <div>
-                <a href="/admin/painel" class="{{ request()->is('admin/painel') ? 'text-blue-500' : ''}} text-left">Posts</a>
+                <a href="/admin/painel"
+                    class="{{ request()->is('admin/painel') || request()->is('livewire/message/delete-post') ? 'text-blue-500' : '' }} text-left">Posts</a>
             </div>
 
             <div>
-                <a href="/admin/painel/usuários" class="{{ request()->is('admin/painel/usuários') ? 'text-blue-500' : ''}} text-left">Usuários</a>
+                <a href="/admin/painel/usuários"
+                    class="{{ request()->is('admin/painel/usuários') || request()->is('livewire/message/delete-user') ? 'text-blue-500' : '' }} text-left">Usuários</a>
             </div>
 
         </aside>

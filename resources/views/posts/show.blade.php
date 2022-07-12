@@ -77,7 +77,7 @@
 
                                 @livewire('manage-likes', ['postId' => $post->id])
 
-                                <x-comment-button :post="$post" />
+                                @livewire('count-comments', ['postId' => $post->id])
 
                             </div>
                         </div>

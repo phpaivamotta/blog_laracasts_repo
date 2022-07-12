@@ -26,6 +26,7 @@ class DeleteComment extends Component
         $this->modal = false;
         $this->post = Post::find($this->post->id);
         $this->comments = $this->post->comment;
+        $this->emit('updateCommentCount');
     }
 
     public function render()

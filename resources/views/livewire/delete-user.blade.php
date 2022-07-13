@@ -65,6 +65,9 @@
         </div>
     </x-setting>
 
-    <x-modal wire:model.defer="modal" :object="$user">usuário <strong>({{ $currentUser->username }})</strong>
-    </x-modal>
+    @if ($users->count())
+        <x-modal wire:model.defer="modal" :object="$user">usuário <strong>({{ $currentUser->username }})</strong>
+        </x-modal>
+    @endif
+
 </div>

@@ -117,5 +117,10 @@
         </div>
     </x-setting>
 
-    <x-modal wire:model.defer="modal" :object="$post">post <strong>({{ $currentPost->title }})</strong></x-modal>
+    @if ($posts->count())
+
+        <x-modal wire:model.defer="modal" :object="$post">post <strong>({{ $currentPost->title }})</strong></x-modal>
+
+    @endif
+
 </div>

@@ -2,7 +2,7 @@
 
     @foreach ($comments as $comment)
         <form x-data>
-            <article class="flex bg-gray-100 border border-gray-200 p-6 rounded-xl space-x-4" id="comments">
+            <article class="flex bg-gray-100 border border-gray-200 p-6 rounded-xl space-x-4 mt-2" id="comments">
 
                 <div class="flex-shrink-0">
                     <img src="{{ isset($comment->author->profile_pic)
@@ -26,16 +26,22 @@
 
                     @admin
                         <button type="button" class="text-xs text-blue-300 hover:text-indigo-900"
-                            wire:click="$set('modal', true)">Deletar</button>
+                        wire:click="confirmDelete({{ $comment }})">Deletar</button>
                     @endadmin
 
                 </div>
 
             </article>
 
-            <x-modal wire:model.defer="modal" :object="$comment">comentário</x-modal>
+            
 
         </form>
     @endforeach
+
+    @if ($comments->count())
+
+        <x-modal wire:model.defer="modal" :object="$comment">comentário</x-modal>   
+
+    @endif
 
 </div>

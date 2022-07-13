@@ -1,6 +1,6 @@
 @auth
     <x-panel>
-        <form method="POST" action="/posts/{{ $post->slug }}/comments">
+        <form wire:submit.prevent="postComment" method="POST" action="/posts/{{ $post->slug }}/comments">
             @csrf
 
             <header class="flex items-center">
@@ -15,7 +15,7 @@
             </header>
 
             <div class="mt-6">
-                <textarea id="comment" name="body" class="w-full text-sm focus:outline-none focus:ring" rows="5"
+                <textarea wire:model.defer="body" id="comment" name="body" class="w-full text-sm focus:outline-none focus:ring" rows="5"
                     placeholder="Digite seu comentário aqui." required></textarea>
 
                 @error('body')

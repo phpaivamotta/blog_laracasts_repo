@@ -142,11 +142,8 @@
 
                 </div>
 
-                <section class="col-span-8 col-start-5 mt-8 space-y-5">
-                    @include('posts._add-comment-form')
-
-                    @livewire('delete-comment', ['postId' => $post->id])
-                </section>
+                {{-- comment section --}}
+                @livewire('manage-comments', ['postId' => $post->id])
 
             </article>
         </main>

@@ -1,4 +1,4 @@
-@props(['comment'])
+{{-- @props(['comment'])
 
 <article class="flex bg-gray-100 border border-gray-200 p-6 rounded-xl space-x-4" id="comments">
 
@@ -28,4 +28,4 @@
 
     </div>
 
-</article>
+</article> --}}

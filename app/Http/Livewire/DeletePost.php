@@ -17,6 +17,21 @@ class DeletePost extends Component
         $this->currentPost = new Post;
     }
 
+    public function render()
+    {
+        return view('livewire.delete-post', [
+            'posts' => Post::with(['comment', 'likeCounter'])->paginate(50),
+            'visitors' => Visitor::all()
+        ]);
+    }
+
+    public function confirmDelete(Post $post)
+    {
+        $this->currentPost = $post;
+
+        $this->modal = true;
+    }
+
     public function destroy()
     {
         $this->currentPost->delete();
@@ -24,18 +39,12 @@ class DeletePost extends Component
         $this->modal = false;
     }
 
-    public function confirmDelete(Post $object)
+    public function toggleHide(Post $post)
     {
-        $this->currentPost = $object;
+        $this->currentPost = $post;
 
-        $this->modal = true;
-    }
+        $this->currentPost->update(['hide' => ! $this->currentPost->hide]);
 
-    public function render()
-    {
-        return view('livewire.delete-post', [
-            'posts' => Post::with(['comment', 'likeCounter'])->paginate(50),
-            'visitors' => Visitor::all()
-        ]);
+        ddd($this->currentPost->hide);
     }
 }

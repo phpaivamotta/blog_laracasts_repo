@@ -68,7 +68,7 @@
             <h5 class="text-3xl">Receba notificações de novos posts.</h5>
 
             <div class="mt-10">
-                <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
+                <div class="inline-block mx-auto lg:bg-gray-200 rounded-full">
 
                     <form method="POST" action="/newsletter" class="lg:flex text-sm">
                         @csrf

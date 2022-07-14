@@ -43,7 +43,7 @@
         @endforeach
 
         @if ($comments->count())
-            <x-modal wire:model.defer="modal" :object="$comment">comentário</x-modal>
+            <x-modal-delete wire:model.defer="modalDelete" :object="$comment">comentário</x-modal-delete>
         @endif
 
 </div>

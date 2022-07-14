@@ -6,9 +6,10 @@ use App\Models\Post;
 use App\Models\Visitor;
 use Livewire\Component;
 
-class DeletePost extends Component
+class ManagePosts extends Component
 {
-    public $modal = false;
+    public $modalDelete = false;
+    public $modalHide = false;
 
     public Post $currentPost;
 
@@ -19,7 +20,7 @@ class DeletePost extends Component
 
     public function render()
     {
-        return view('livewire.delete-post', [
+        return view('livewire.manage-posts', [
             'posts' => Post::with(['comment', 'likeCounter'])->paginate(50),
             'visitors' => Visitor::all()
         ]);
@@ -29,22 +30,27 @@ class DeletePost extends Component
     {
         $this->currentPost = $post;
 
-        $this->modal = true;
+        $this->modalDelete = true;
     }
 
     public function destroy()
     {
         $this->currentPost->delete();
 
-        $this->modal = false;
+        $this->modalDelete = false;
     }
 
-    public function toggleHide(Post $post)
+    public function confirmHide(Post $post)
     {
         $this->currentPost = $post;
 
-        $this->currentPost->update(['hide' => ! $this->currentPost->hide]);
+        $this->modalHide = true;
+    }
 
-        ddd($this->currentPost->hide);
+    public function toggleHide()
+    {
+        $this->currentPost->update(['hide' => !$this->currentPost->hide]);
+
+        $this->modalHide = false;
     }
 }

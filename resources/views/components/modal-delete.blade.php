@@ -15,7 +15,7 @@
                 <button class="bg-blue-500 hover:bg-blue-600 text-xs py-2 px-4 rounded-md text-white mr-2"
                     wire:click="destroy({{ $object->id }})">Deletar</button>
                 <button type="button"
-                    class="bg-blue-500 hover:bg-blue-600 text-xs py-2 px-4 rounded-md text-white" wire:click="$set('modal', false)">Cancelar</button>
+                    class="bg-blue-500 hover:bg-blue-600 text-xs py-2 px-4 rounded-md text-white" wire:click="$set('modalDelete', false)">Cancelar</button>
             </footer>
         </div>
     </div>

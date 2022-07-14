@@ -11,7 +11,7 @@
 
             <div>
                 <a href="/admin/painel"
-                    class="{{ request()->is('admin/painel') || request()->is('livewire/message/delete-post') ? 'text-blue-500' : '' }} text-left">Posts</a>
+                    class="{{ request()->is('admin/painel') || request()->is('livewire/message/manage-posts') ? 'text-blue-500' : '' }} text-left">Posts</a>
             </div>
 
             <div>

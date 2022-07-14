@@ -1,3 +1,3 @@
 <x-layout>
-        @livewire('delete-post')
+        @livewire('manage-posts')
 </x-layout>

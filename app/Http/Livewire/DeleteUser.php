@@ -8,7 +8,7 @@ use Livewire\Component;
 class DeleteUser extends Component
 {
 
-    public $modal = false;
+    public $modalDelete = false;
 
     public User $currentUser;
 
@@ -21,14 +21,14 @@ class DeleteUser extends Component
     {
         $this->currentUser->delete();
 
-        $this->modal = false;
+        $this->modalDelete = false;
     }
 
     public function confirmDelete(User $object)
     {
         $this->currentUser = $object;
 
-        $this->modal = true;
+        $this->modalDelete = true;
     }
 
 

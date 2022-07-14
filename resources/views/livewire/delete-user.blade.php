@@ -109,8 +109,8 @@
     </x-setting>
 
     @if ($users->count())
-        <x-modal wire:model.defer="modal" :object="$user">usuário <strong>({{ $currentUser->username }})</strong>
-        </x-modal>
+        <x-modal-delete wire:model.defer="modalDelete" :object="$user">usuário <strong>({{ $currentUser->username }})</strong>
+        </x-modal-delete>
     @endif
 
 </div>

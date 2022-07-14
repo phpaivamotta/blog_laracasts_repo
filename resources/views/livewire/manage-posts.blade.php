@@ -69,6 +69,14 @@
                                                 </div>
                                             </td>
 
+                                            {{-- toggle hide --}}
+                                            <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
+                                                <button type="button"
+                                                    class="{{ $post->hide ? 'text-my-gray hover:text-gray-400' : 'text-blue-300 hover:text-indigo-900' }}"
+                                                    wire:click="confirmHide({{ $post }})">{{ $post->hide ? 'Desocultar' : 'Ocultar' }}
+                                                </button>
+                                            </td>
+
                                             <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
                                                 <a href="/admin/posts/{{ $post->id }}/editar"
                                                     class="text-blue-300 hover:text-indigo-900">Editar</a>
@@ -118,9 +126,13 @@
     </x-setting>
 
     @if ($posts->count())
+        <x-modal-delete wire:model.defer="modalDelete" :object="$post">post
+            <strong>({{ $currentPost->title }})</strong>
+        </x-modal-delete>
 
-        <x-modal wire:model.defer="modal" :object="$post">post <strong>({{ $currentPost->title }})</strong></x-modal>
-
+        <x-modal-hide wire:model.defer="modalHide" :currentPost="$currentPost">post
+            <strong>({{ $currentPost->title }})</strong>
+        </x-modal-hide>
     @endif
 
 </div>

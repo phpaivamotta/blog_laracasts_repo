@@ -9,7 +9,7 @@ use Livewire\Component;
 class ManageComments extends Component
 {
 
-    public $modal = false;
+    public $modalDelete = false;
     public $post;
     public $comments;
     public $body;   // body of the comment
@@ -48,7 +48,7 @@ class ManageComments extends Component
     {
         $this->currentComment->delete();
 
-        $this->modal = false;
+        $this->modalDelete = false;
 
         $this->post = Post::find($this->post->id);
         $this->comments = $this->post->comment;
@@ -59,7 +59,7 @@ class ManageComments extends Component
     {
         $this->currentComment = $object;
 
-        $this->modal = true;
+        $this->modalDelete = true;
     }
 
     public function render()

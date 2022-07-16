@@ -3,11 +3,12 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
-use Illuminate\Validation\Rule;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class RegisterForm extends Component
 {
+    use WithFileUploads;
 
     public $name;
     public $username;
@@ -16,14 +17,20 @@ class RegisterForm extends Component
 
     protected $rules = [
         'name' => ['required', 'max:255'],
-        'username' => ['required', 'min:3', 'max:255', Rule::unique('users', 'username')],
+        'username' => ['required', 'min:3', 'max:255', 'unique:users,username'], 
         'profile_pic' => ['image'],
         'password' => ['required', 'min:7', 'max:255']
     ];
 
-    public function create()
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+    public function store()
     {
 
+        ddd($this->profile_pic);
         // validate user data submitted and store them in the variable $attributes
         $attributes = $this->validate();
 
@@ -31,7 +38,7 @@ class RegisterForm extends Component
         // if so, store profile_pic in profile_pics folder storage>app>public>profile_pics
         // otherwise, set profile pic to generic picture in public>images
         if (isset($attributes['profile_pic'])) {
-            $attributes['profile_pic'] = request()->file('profile_pic')->store('profile_pics');
+            $attributes['profile_pic'] = $this->profile_pic->store('profile_pics');
         }
 
         // create the user with validated attributes

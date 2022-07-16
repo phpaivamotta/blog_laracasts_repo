@@ -18,7 +18,7 @@ class RegisterForm extends Component
     protected $rules = [
         'name' => ['required', 'max:255'],
         'username' => ['required', 'min:3', 'max:255', 'unique:users,username'], 
-        'profile_pic' => ['image'],
+        'profile_pic' => ['image', 'nullable'],
         'password' => ['required', 'min:7', 'max:255']
     ];
 
@@ -30,7 +30,6 @@ class RegisterForm extends Component
     public function store()
     {
 
-        ddd($this->profile_pic);
         // validate user data submitted and store them in the variable $attributes
         $attributes = $this->validate();
 

@@ -14,6 +14,8 @@ class RegisterForm extends Component
     public $username;
     public $profile_pic;
     public $password;
+    public $tempUrl;
+    public $profilePicId;
 
     protected $rules = [
         'name' => ['required', 'max:255'],
@@ -22,9 +24,18 @@ class RegisterForm extends Component
         'password' => ['required', 'min:7', 'max:255']
     ];
 
+    protected $validationAttributes = [
+        'profile_pic' => 'foto de perfil'
+    ];
+
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
+    }
+
+    public function updatedProfile_pic()
+    {
+        $this->validate();
     }
 
     public function store()
@@ -49,6 +60,12 @@ class RegisterForm extends Component
         // redirect user to homepage after creating a profile
         // and flash a message saying account has been created successfully
         return redirect('/')->with('success', 'Sua conta foi criada!');
+    }
+
+    public function removeSelectedProfilePic()
+    {
+        $this->profile_pic = null;
+        $this->profilePicId++;
     }
 
     public function render()

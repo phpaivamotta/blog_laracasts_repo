@@ -18,7 +18,10 @@
                             <input type="file" wire:model="profile_pic" class="border border-gray-400 p-2 w-full"
                                 name="profile_pic" id="{{ $profilePicId }}">
 
-                            <x-form.error name="profile_pic" />
+                            @if ($profile_pic)
+                                <x-form.error name="profile_pic" />
+                            @endif
+
                         </x-form.field>
 
                     </div>
@@ -38,7 +41,6 @@
 
 
                     @if ($profile_pic)
-
                         @php
                             try {
                                 $tempUrl = $profile_pic->temporaryUrl();

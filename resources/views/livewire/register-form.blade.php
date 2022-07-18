@@ -21,7 +21,6 @@
                             @if ($profile_pic)
                                 <x-form.error name="profile_pic" />
                             @endif
-
                         </x-form.field>
 
                     </div>

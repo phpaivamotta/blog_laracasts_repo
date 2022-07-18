@@ -18,7 +18,7 @@
                             <x-form.input name="profile_pic" type="file" :value="old('profile_pic', $user->profile_pic)" id="Foto de Perfil (Opcional)" />
 
                             <input type="checkbox" id="nopic" name="nopic" value="bool">
-                            <label for="nopic">Deletar foto de perfil</label><br>
+                            <label for="nopic">Sem Foto</label><br>
                         </div>
 
                         <img src="{{ isset($user->profile_pic) ? 

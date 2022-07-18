@@ -4,6 +4,7 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/translations/pt.js"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script defer src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 @livewireStyles
@@ -67,38 +68,36 @@
 
             <h5 class="text-3xl">Receba notificações de novos posts.</h5>
 
+            {{-- email input box --}}
             <div class="mt-10">
-                <div class="inline-block mx-auto lg:bg-gray-200 rounded-full">
+                <div class="inline-block mx-auto bg-gray-200 rounded-full">
 
-                    <form method="POST" action="/newsletter" class="lg:flex text-sm">
-                        @csrf
+                    <form method="POST" action="/newsletter" class="flex text-sm">
+                        <input type="hidden" name="_token" value="tIyC58JN1ltk9qMOdTbl6tZblaga9bBgnXhd3So7">
+                        <div class="py-3 px-5 flex items-center">
 
-                        <div class="lg:py-3 lg:px-5 flex items-center">
-
-                            <label for="email" class="hidden lg:inline-block">
+                            <label for="email" class="inline-block">
                                 <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                             </label>
 
                             <div>
 
                                 <input id="email" name="email" type="text" placeholder="Seu endereço de email"
-                                    class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none">
+                                    class="bg-transparent py-2 py-0 pl-4 focus-within:outline-none">
 
-                                @error('email')
-                                    <span class="text-red-500 text-xs"> {{ $message }} </span>
-                                @enderror
 
                             </div>
 
                         </div>
 
                         <button type="submit"
-                            class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
+                            class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 mt-0 ml-3 rounded-full text-sm font-semibold text-white py-3 px-8">
                             Inscreva-se
                         </button>
                     </form>
                 </div>
             </div>
+            {{-- email input box --}}
 
             <!-- social media -->
             <div class="relative space-x-4 inline-flex mt-10 text-gray-700">

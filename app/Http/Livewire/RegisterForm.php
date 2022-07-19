@@ -33,10 +33,11 @@ class RegisterForm extends Component
         $this->validateOnly($propertyName);
     }
 
-    public function updatedProfile_pic()
-    {
-        $this->validate();
-    }
+    // do I not need this is I already have the updated method?
+    // public function updatedProfile_pic()
+    // {
+    //     $this->validate();
+    // }
 
     public function store()
     {

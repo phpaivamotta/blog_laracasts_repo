@@ -14,7 +14,7 @@
         </svg>
     </a>
 
-    <span class="text-lg text-black">{{ $post->comment->count() }}</span>
+    <span class="text-sm text-gray-700 font-semibold">{{ $post->comment->count() }}</span>
 
 @else
     
@@ -28,6 +28,6 @@
         </g>
     </svg>
 
-    <span class="text-lg text-black">{{ $post->comment->count() }}</span>
+    <span class="text-sm text-gray-700 font-semibold">{{ $post->comment->count() }}</span>
 
 @endauth

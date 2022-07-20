@@ -300,6 +300,18 @@ menu {
   padding: 0;
 }
 
+ul,
+ul li {
+  list-style-type: disc;
+  margin-left: 50px;
+}
+
+ol, 
+ol li {
+  list-style-type: decimal; 
+  margin-left: 50px;
+}
+
 .ck.ck-content ol,
 .ck.ck-content ol li{
   list-style-type: decimal;

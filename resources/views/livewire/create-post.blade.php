@@ -4,7 +4,25 @@
 
             <x-form.input name="title" id="Título" />
             <x-form.input name="slug" id="Slug" />
-            <x-form.input name="thumbnail" type="file" id="Miniatura" />
+
+            {{-- Thumbnail: how I might handle it --}}
+            @if ($thumbnail)
+                @if ($tempUrl)
+                    <div class="flex mt-6">
+                        <div class="flex-1">
+                            <x-form.input name="thumbnail" type="file" id="Miniatura" />
+                        </div>
+
+                        <img src="{{ $tempUrl }}" alt="Miniatura" class="rounded-xl ml-6" width="100">
+                    </div>
+                @else
+                    <x-form.input name="thumbnail" type="file" id="Miniatura" />
+                @endif
+            @else
+                <x-form.input name="thumbnail" type="file" id="Miniatura" />
+            @endif
+            {{-- end Thumbnail: how I might handle it --}}
+
             <x-form.textarea name="excerpt" id="Excerto" />
 
             <x-form.field>

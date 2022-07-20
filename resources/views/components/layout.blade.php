@@ -82,7 +82,7 @@
                             <div>
 
                                 <input id="email" name="email" type="text" placeholder="Seu endereço de email"
-                                    class="bg-transparent py-2 py-0 pl-4 focus-within:outline-none">
+                                    class="bg-transparent py-0 pl-4 focus-within:outline-none">
 
 
                             </div>
@@ -90,7 +90,7 @@
                         </div>
 
                         <button type="submit"
-                            class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 mt-0 ml-3 rounded-full text-sm font-semibold text-white py-3 px-8">
+                            class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-0 ml-3 rounded-full text-sm font-semibold text-white py-3 px-8">
                             Inscreva-se
                         </button>
                     </form>

@@ -46,4 +46,6 @@
             <x-modal-delete wire:model.defer="modalDelete" :object="$comment">comentário</x-modal-delete>
         @endif
 
+        <x-flash />
+
 </div>

@@ -38,6 +38,8 @@ class ManagePosts extends Component
         $this->currentPost->delete();
 
         $this->modalDelete = false;
+
+        session()->flash('success', 'Post deletado!');
     }
 
     public function confirmHide(Post $post)

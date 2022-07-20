@@ -13,7 +13,7 @@
                                         </td>
 
                                         <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
-                                            <div class="flex">
+                                            <div class="flex items-center">
                                                 <svg viewBox="-5 -5 30 30" version="1.1" width="20">
                                                     <g id="Page-1" stroke="none" stroke-width="1" fill="#add4f4"
                                                         fill-rule="evenodd">
@@ -25,21 +25,21 @@
                                                     </g>
                                                 </svg>
 
-                                                <p class="text-black ml-2">
+                                                <p class="text-xs text-gray-700 font-semibold ml-2">
                                                     {{ $user->comments->count() }}
                                                 </p>
                                             </div>
                                         </td>
 
                                         <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
-                                            <div class="flex">
+                                            <div class="flex items-center">
                                                 <svg viewBox="-5 -5 30 30" width="20">
                                                     <path fill="#add4f4"
                                                         d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z">
                                                     </path>
                                                 </svg>
 
-                                                <p class="text-black ml-2">
+                                                <p class="text-xs text-gray-700 font-semibold ml-2">
                                                     {{ $user->likes->count() }}
                                                 </p>
                                             </div>
@@ -64,7 +64,7 @@
                                     </td>
 
                                     <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
-                                        <div class="flex">
+                                        <div class="flex items-center">
                                             <svg viewBox="-5 -5 30 30" version="1.1" width="20">
                                                 <g id="Page-1" stroke="none" stroke-width="1" fill="#add4f4"
                                                     fill-rule="evenodd">
@@ -76,21 +76,21 @@
                                                 </g>
                                             </svg>
 
-                                            <p class="text-black ml-2">
+                                            <p class="text-xs text-gray-700 font-semibold ml-2">
                                                 {{ auth()->user()->comments->count() }}
                                             </p>
                                         </div>
                                     </td>
 
                                     <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
-                                        <div class="flex">
+                                        <div class="flex items-center">
                                             <svg viewBox="-5 -5 30 30" width="20">
                                                 <path fill="#add4f4"
                                                     d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z">
                                                 </path>
                                             </svg>
 
-                                            <p class="text-black ml-2">
+                                            <p class="text-xs text-gray-700 font-semibold ml-2">
                                                 {{ auth()->user()->likes->count() }}
                                             </p>
                                         </div>
@@ -112,5 +112,7 @@
         <x-modal-delete wire:model.defer="modalDelete" :object="$user">usuário <strong>({{ $currentUser->username }})</strong>
         </x-modal-delete>
     @endif
+
+    <x-flash />
 
 </div>

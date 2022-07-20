@@ -17,7 +17,7 @@
                                             </td>
 
                                             <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
-                                                <div class="flex">
+                                                <div class="flex items-center">
                                                     <svg viewBox="-5 -5 30 30" version="1.1" width="20">
                                                         <g id="Page-1" stroke="none" stroke-width="1" fill="#add4f4"
                                                             fill-rule="evenodd">
@@ -29,28 +29,28 @@
                                                         </g>
                                                     </svg>
 
-                                                    <p class="text-black ml-2">
+                                                    <p class="text-xs text-gray-700 font-semibold ml-2">
                                                         {{ $post->comment->count() }}
                                                     </p>
                                                 </div>
                                             </td>
 
                                             <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
-                                                <div class="flex">
+                                                <div class="flex items-center">
                                                     <svg viewBox="-5 -5 30 30" width="20">
                                                         <path fill="#add4f4"
                                                             d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z">
                                                         </path>
                                                     </svg>
 
-                                                    <p class="text-black ml-2">
+                                                    <p class="text-xs text-gray-700 font-semibold ml-2">
                                                         {{ $post->likeCount }}
                                                     </p>
                                                 </div>
                                             </td>
 
                                             <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
-                                                <div class="flex">
+                                                <div class="flex items-center">
 
                                                     <svg viewBox="0 0 20 20" version="1.1" width="20">
                                                         <g id="Page-1" stroke="none" stroke-width="1" fill="#add4f4"
@@ -63,7 +63,7 @@
                                                         </g>
                                                     </svg>
 
-                                                    <p class="text-black ml-2">
+                                                    <p class="text-xs text-gray-700 font-semibold ml-2">
                                                         {{ $visitors->where('post_id', $post->id)->unique('ip')->count() }}
                                                     </p>
                                                 </div>
@@ -134,5 +134,7 @@
             <strong>({{ $currentPost->title }})</strong>
         </x-modal-hide>
     @endif
+
+    <x-flash />
 
 </div>

@@ -42,6 +42,8 @@ class ManageComments extends Component
         // refresh model
         $this->post = Post::find($this->post->id);
         $this->comments = $this->post->comment;
+
+        session()->flash('success', 'Comentário postado!');
     }
 
     public function destroy()
@@ -53,6 +55,8 @@ class ManageComments extends Component
         $this->post = Post::find($this->post->id);
         $this->comments = $this->post->comment;
         $this->emit('updateCommentCount');
+
+        session()->flash('success', 'Comentário deletado!');
     }
 
     public function confirmDelete(Comment $object)

@@ -22,6 +22,8 @@ class DeleteUser extends Component
         $this->currentUser->delete();
 
         $this->modalDelete = false;
+
+        session()->flash('success', 'O usuário foi deletado!');
     }
 
     public function confirmDelete(User $object)

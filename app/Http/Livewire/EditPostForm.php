@@ -39,14 +39,6 @@ class EditPostForm extends Component
         }
     }
 
-    // protected $rules = [
-    //     'title' => 'required',
-    //     'thumbnail' => 'required|image',
-    //     'slug' => 'required|unique:posts,slug',
-    //     'excerpt' => 'required',
-    //     'body' => 'required',
-    // ];
-
     protected $validationAttributes = [
         'thumbnail' => 'miniatura',
         'excerpt' => 'excerto',

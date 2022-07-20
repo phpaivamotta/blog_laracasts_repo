@@ -87,10 +87,10 @@
 
                             <div class="flex">
 
-                                <div x-show="show" class="flex bg-gray-300 rounded-xl px-2 space-x-2 items-center"
+                                <div x-show="show" class="flex bg-gray-300 rounded-xl px-3 space-x-2 items-center"
                                     style="display: none;">
                                     <a href="{{ $links['facebook'] }}" target="_blank">
-                                        <svg version="1.1" viewBox="0 0 512 512" width="50"
+                                        <svg version="1.1" viewBox="0 0 512 512" width="40"
                                             class="text-my-gray hover:text-blue-500"
                                             xmlns:xlink="http://www.w3.org/1999/xlink">
                                             <path fill="currentColor"
@@ -98,7 +98,7 @@
                                         </svg>
                                     </a>
                                     <a href="{{ $links['linkedin'] }}" target="_blank">
-                                        <svg version="1.1" viewBox="0 0 512 512" width="50"
+                                        <svg version="1.1" viewBox="0 0 512 512" width="40"
                                             class="text-my-gray hover:text-blue-500"
                                             xmlns:xlink="http://www.w3.org/1999/xlink">
                                             <path fill="currentColor"
@@ -106,7 +106,7 @@
                                         </svg>
                                     </a>
                                     <a href="{{ $links['twitter'] }}" target="_blank">
-                                        <svg version="1.1" viewBox="0 0 512 512" width="50"
+                                        <svg version="1.1" viewBox="0 0 512 512" width="40"
                                             class="text-my-gray hover:text-blue-500"
                                             xmlns:xlink="http://www.w3.org/1999/xlink">
                                             <path fill="currentColor"
@@ -114,7 +114,7 @@
                                         </svg>
                                     </a>
                                     <a href="{{ $links['whatsapp'] }}" target="_blank">
-                                        <svg version="1.1" viewBox="0 0 512 512" width="50"
+                                        <svg version="1.1" viewBox="0 0 512 512" width="40"
                                             class="text-my-gray hover:text-blue-500"
                                             xmlns:xlink="http://www.w3.org/1999/xlink">
                                             <path fill="currentColor"

@@ -37,7 +37,7 @@
 
 
                     <div class="ml-2 mr-2">
-                        <h5 class="font-bold">{{ $post->likeCount  }}</h5>
+                        <h5 class="text-sm text-gray-700 font-semibold">{{ $post->likeCount  }}</h5>
                     </div>
 
                     <!-- comments -->
@@ -50,7 +50,7 @@
                     </svg>
 
                     <div class="ml-2">
-                        <h5 class="font-bold">{{ $post->comment->count() }}</h5>
+                        <h5 class="text-sm text-gray-700 font-semibold">{{ $post->comment->count() }}</h5>
                     </div>
 
                 </div>

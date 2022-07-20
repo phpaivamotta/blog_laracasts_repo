@@ -15,6 +15,7 @@ class CreatePost extends Component
     public $thumbnail;
     public $excerpt;
     public $body;
+    public $tempUrl;
 
     protected $rules = [
         'title' => 'required',
@@ -32,6 +33,14 @@ class CreatePost extends Component
 
     public function updated($propertyName)
     {
+        if ($propertyName == 'thumbnail') {
+            try {
+                $this->tempUrl = $this->thumbnail->temporaryUrl();
+            } catch (\Exception $e) {
+                $this->tempUrl = null;
+            }
+        }
+        
         $this->validateOnly($propertyName);
     }
 

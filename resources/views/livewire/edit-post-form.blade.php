@@ -26,7 +26,7 @@
                 <x-form.label name="Corpo" />
 
                 <div wire:ignore>
-                    <textarea wire:model="body" class="border border-gray-400 p-2 w-full" name="body" id="body"> {{ old('excerpt', $excerpt) }} </textarea>
+                    <textarea wire:model="body" class="border border-gray-400 p-2 w-full" name="body" id="body"> {{ old('body', $body) }} </textarea>
                 </div>
 
                 <x-form.error name="body" />

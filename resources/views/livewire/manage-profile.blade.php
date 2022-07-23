@@ -18,10 +18,9 @@
                     @if (auth()->user() == $user)
                         <div class="flex flex-col space-y-1">
                             <a href="/perfil/{{ $user->username }}/editar"
-                                class="text-sm text-blue-300 hover:text-indigo-900">Editar Perfil</a>
+                                class="text-sm text-blue-400 hover:text-indigo-900 font-semibold">Editar</a>
 
-                            <button type="button" wire:click="confirmDelete" class="text-sm text-red-300 text-left hover:text-red-900">Deletar
-                                Perfil</button>
+                            <button type="button" wire:click="confirmDelete" class="text-sm text-red-400 text-left hover:text-red-900 font-semibold">Deletar</button>
                         </div>
                     @endif
 

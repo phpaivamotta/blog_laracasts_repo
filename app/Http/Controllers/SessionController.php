@@ -28,7 +28,7 @@ class SessionController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'username' => ['required'],
+            'email' => ['required', 'email'],
             'password' => ['required']
         ]);
 
@@ -38,7 +38,7 @@ class SessionController extends Controller
         }
 
         throw ValidationException::withMessages([
-            'username' => 'Suas credencias não puderam ser validadas.'
+            'email' => 'Suas credencias não puderam ser validadas.'
         ]);
     }
 

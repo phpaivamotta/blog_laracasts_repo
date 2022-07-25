@@ -11,6 +11,7 @@ class RegisterForm extends Component
     use WithFileUploads;
 
     public $name;
+    public $email;
     public $username;
     public $profile_pic;
     public $password;
@@ -19,6 +20,7 @@ class RegisterForm extends Component
 
     protected $rules = [
         'name' => ['required', 'max:255'],
+        'email' => ['required', 'email'],
         'username' => ['required', 'min:3', 'max:255', 'unique:users,username'], 
         'profile_pic' => ['image', 'nullable'],
         'password' => ['required', 'min:7', 'max:255']
@@ -32,12 +34,6 @@ class RegisterForm extends Component
     {
         $this->validateOnly($propertyName);
     }
-
-    // do I not need this is I already have the updated method?
-    // public function updatedProfile_pic()
-    // {
-    //     $this->validate();
-    // }
 
     public function store()
     {

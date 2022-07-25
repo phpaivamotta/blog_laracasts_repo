@@ -1,6 +1,6 @@
 @auth
     <x-panel>
-        <form wire:submit.prevent="postComment" method="POST" action="/posts/{{ $post->slug }}/comments">
+        <form wire:submit.prevent="postComment">
             @csrf
 
             <header class="flex items-center">

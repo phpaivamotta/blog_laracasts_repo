@@ -6,25 +6,24 @@ use App\Models\Post;
 use App\Models\User;
 use Livewire\Component;
 
-class DeleteUser extends Component
+class ManageProfile extends Component
 {
+    public User $user;
+    public $showConfirmDeleteModal = false;
 
-    public $modalDelete = false;
-
-    public User $currentUser;
-
-    public function mount()
+    public function confirmDelete()
     {
-        $this->currentUser = new User;
+        $this->showConfirmDeleteModal = true;
     }
 
     public function destroy()
     {
         // because this user is being deleted, and the laravel-likeable package does not seem to have a cascadeOnDelete functionality, we need to find all the posts the user liked and unlike them (unliking deletes the like entries from the tables created by the package).
-        $userLikes = $this->currentUser->likes;
+        $userLikes = $this->user->likes;
 
         // check to see if the user liked any posts at all before performing operations
-        if ($userLikes->count()) {
+        if ($userLikes->count()) 
+        {
             $postsIdUserLiked = [];
 
             // get the liked posts id's
@@ -38,32 +37,18 @@ class DeleteUser extends Component
 
             // unlike the posts
             foreach ($postsUserLiked as $postUserLiked) {
-                $postUserLiked->unlike($this->currentUser->id);
+                $postUserLiked->unlike($this->user->id);
             }
         }
 
-        // now we can delete the user and flash the message
-        $this->currentUser->delete();
+        // now we can delete the user and redirect
+        $this->user->delete();
 
-        $this->modalDelete = false;
-
-        session()->flash('success', 'O usuário foi deletado!');
+        return redirect('/')->with('success', 'Perfil deletado :(');
     }
-
-    public function confirmDelete(User $object)
-    {
-        $this->currentUser = $object;
-
-        $this->modalDelete = true;
-    }
-
 
     public function render()
     {
-        return view('livewire.delete-user', [
-            'users' => User::with(['comments', 'likes'])
-                ->where('username', '!=', 'jessicaszklarz')
-                ->paginate(50),
-        ]);
+        return view('livewire.manage-profile');
     }
 }

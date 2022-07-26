@@ -8,7 +8,7 @@
             </p>
 
             @if (session('status'))
-                <div class="mt-4 fornt-medium text-sm text-green-600">
+                <div class="mt-4 font-medium text-sm text-green-600">
                     {{ session('status') }}
                 </div>
             @endif

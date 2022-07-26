@@ -30,10 +30,13 @@ class ForgotPasswordSendEmail extends Component
             'email' => $this->email
         ]);
 
+        // ddd($status == Password::RESET_LINK_SENT ? "sent" : "NOT sent");
+
+        // return back()->with('status', __($status));
+
         return $status == Password::RESET_LINK_SENT
             ? back()->with('status', __($status))
-            : back()->withInput(['email' => $this->email])
-            ->withErrors(['email' => __($status)]);
+            : back()->with('email', __($status));
     }
 
     public function render()

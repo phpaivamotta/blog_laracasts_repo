@@ -7,14 +7,22 @@
                 Preencha o campo abaixo com o seu email para receber o link de mudança de senha.
             </p>
 
+            {{-- message if email was sent successfully --}}
             @if (session('status'))
-                <div class="mt-4 font-medium text-sm text-green-600">
+                <div class="mt-6 font-medium text-sm text-green-600">
                     {{ session('status') }}
+                </div>
+            @endif
+            
+            {{-- message if email was NOT sent successfully --}}
+            @if (session('email'))
+                <div class="mt-6 font-medium text-sm text-red-600">
+                    {{ session('email') }}
                 </div>
             @endif
 
             <!-- user input form  -->
-            <form wire:submit.prevent="store" class="mt-8">
+            <form wire:submit.prevent="store" class="mt-6">
                 @csrf
 
                 <x-form.input name="email" type="email" id="Email" autocomplete="email" />

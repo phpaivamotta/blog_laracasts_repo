@@ -7,6 +7,13 @@
             <form wire:submit.prevent="store" method="POST" action="/login" class="mt-10">
                 @csrf
 
+                {{-- message if email was sent successfully --}}
+                @if (session()->has('status'))
+                    <div class="mt-6 font-medium text-sm text-green-600 mb-6">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
                 <x-form.input name="email" type="email" id="Email" autocomplete="email" />
                 <x-form.input name="password" type="password" autocomplete="new-password" id="Senha" />
 
@@ -20,7 +27,9 @@
                     </label>
                 </div>
 
-                <a href="/esqueci-senha" class="text-xs text-blue-500 hover:text-blue-900 underline inline-block mb-6">Esqueceu sua senha?</a>
+                <a href="/esqueci-senha"
+                    class="text-xs text-blue-500 hover:text-blue-900 underline inline-block mb-6">Esqueceu sua
+                    senha?</a>
 
                 <x-form.button>
 

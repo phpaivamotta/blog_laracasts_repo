@@ -4,7 +4,7 @@
             <h1 class="text-center font-bold text-xl">Redefinir Senha</h1>
 
             <!-- user input form  -->
-            <form wire:submit.prevent="store" method="POST" action="{{ route('password.update') }}">
+            <form wire:submit.prevent="store">
                 @csrf
 
                 <!-- Password Reset Token -->

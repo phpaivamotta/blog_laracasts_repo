@@ -4,15 +4,8 @@
             <h1 class="text-center font-bold text-xl">Login</h1>
 
             <!-- user input form  -->
-            <form wire:submit.prevent="store" method="POST" action="/login" class="mt-10">
+            <form wire:submit.prevent="store" class="mt-10">
                 @csrf
-
-                {{-- message if email was sent successfully --}}
-                @if (session()->has('status'))
-                    <div class="mt-6 font-medium text-sm text-green-600 mb-6">
-                        {{ session('status') }}
-                    </div>
-                @endif
 
                 <x-form.input name="email" type="email" id="Email" autocomplete="email" />
                 <x-form.input name="password" type="password" autocomplete="new-password" id="Senha" />
@@ -49,4 +42,6 @@
             </form>
         </x-panel>
     </main>
+
+    <x-flash />
 </div>

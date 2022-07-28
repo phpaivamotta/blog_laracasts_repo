@@ -3,7 +3,7 @@
         <x-panel>
             <h1 class="text-center font-bold text-xl">Cadastre-se</h1>
 
-            <form wire:submit.prevent="store" method="POST" action="/cadastro" enctype="multipart/form-data" class="mt-10">
+            <form wire:submit.prevent="store" enctype="multipart/form-data" class="mt-10">
                 @csrf
 
                 <x-form.input name="name" type="text" id="Nome" />

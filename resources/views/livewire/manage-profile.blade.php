@@ -12,6 +12,7 @@
 
                     <div class="py-6 space-y-4">
                         <p><strong>Nome:</strong> {{ $user->name }}</p>
+                        <p><strong>Email:</strong> {{ $user->email }}</p>
                         <p><strong>Nome de Usuário:</strong> {{ $user->username }}</p>
                     </div>
 

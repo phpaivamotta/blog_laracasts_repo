@@ -32,7 +32,7 @@ class SessionController extends Controller
             'password' => ['required']
         ]);
 
-        if (auth()->attempt($attributes)) {
+        if (auth()->attempt($attributes, $remember = true)) {
             session()->regenerate();
             return redirect('/')->with('success', 'Ebaa! Bem-vindo(a) de volta :D');
         }

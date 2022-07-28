@@ -118,6 +118,12 @@
                 </a>
             </div>
 
+            <div class="mt-6">
+                <p class="text-xs text-gray-700">
+                    © {{ date('Y') }} {{ config('app.name') }}. @lang('All rights reserved.')
+                </p>
+            </div>
+
         </footer>
     </section>
 

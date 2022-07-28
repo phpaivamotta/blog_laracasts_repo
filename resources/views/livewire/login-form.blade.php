@@ -10,9 +10,17 @@
                 <x-form.input name="email" type="email" id="Email" autocomplete="email" />
                 <x-form.input name="password" type="password" autocomplete="new-password" id="Senha" />
 
-                <a href="/esqueci-senha">
-                    <p class="text-xs text-blue-500 hover:text-blue-900 underline mb-4">Esqueceu sua senha?</p>
-                </a>
+                <!-- Remember Me -->
+                <div class="block mt-4">
+                    <label for="remember_me" class="inline-flex items-center">
+                        <input wire:model="remember" id="remember_me" type="checkbox"
+                            class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                            name="remember">
+                        <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    </label>
+                </div>
+
+                <a href="/esqueci-senha" class="text-xs text-blue-500 hover:text-blue-900 underline inline-block mb-6">Esqueceu sua senha?</a>
 
                 <x-form.button>
 

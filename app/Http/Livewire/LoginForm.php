@@ -9,6 +9,7 @@ class LoginForm extends Component
 {
     public $email;
     public $password;
+    public $remember;
 
     protected $rules = [
         'email' => ['required', 'email'],
@@ -25,7 +26,10 @@ class LoginForm extends Component
     {
         $attributes = $this->validate();
 
-        if (auth()->attempt($attributes)) {
+        // convert checkbox value to boolean
+        $this->remember = (bool) $this->remember;
+
+        if (auth()->attempt($attributes, $this->remember)) {
             session()->regenerate();
             return redirect('/')->with('success', 'Ebaa! Bem-vindo(a) de volta :D');
         }

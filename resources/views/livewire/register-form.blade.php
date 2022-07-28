@@ -60,8 +60,8 @@
                 {{-- end user profile pic --}}
                 <x-form.input name="password" type="password" id="Senha" />
 
-                <a href="/login">
-                    <p class="text-xs text-blue-500 hover:text-blue-900 underline mb-4">Já é cadastrado?</p>
+                <a href="/login" class="text-xs text-blue-500 hover:text-blue-900 underline inline-block mb-6">
+                    Já é cadastrado?
                 </a>
 
                 <x-form.button>

@@ -7,6 +7,7 @@
                 @csrf
 
                 <x-form.input name="name" type="text" id="Nome" />
+                <x-form.input name="email" type="email" id="Email" />
                 <x-form.input name="username" type="text" id="Nome de Usuário" />
                 {{-- user profile pic --}}
                 <div class="flex items-center mt-6 mb-2">
@@ -58,6 +59,10 @@
                 </div>
                 {{-- end user profile pic --}}
                 <x-form.input name="password" type="password" id="Senha" />
+
+                <a href="/login" class="text-xs text-blue-500 hover:text-blue-900 underline inline-block mb-6">
+                    Já é cadastrado?
+                </a>
 
                 <x-form.button>
 

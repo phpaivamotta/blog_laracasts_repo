@@ -28,17 +28,17 @@ class SessionController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'username' => ['required'],
+            'email' => ['required', 'email'],
             'password' => ['required']
         ]);
 
-        if (auth()->attempt($attributes)) {
+        if (auth()->attempt($attributes, $remember = true)) {
             session()->regenerate();
             return redirect('/')->with('success', 'Ebaa! Bem-vindo(a) de volta :D');
         }
 
         throw ValidationException::withMessages([
-            'username' => 'Suas credencias não puderam ser validadas.'
+            'email' => 'Suas credencias não puderam ser validadas.'
         ]);
     }
 

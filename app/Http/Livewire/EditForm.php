@@ -12,6 +12,7 @@ class EditForm extends Component
 
     public $user;
     public $name;
+    public $email;
     public $username;
     public $profile_pic;
     public $profilePicId;
@@ -23,11 +24,13 @@ class EditForm extends Component
         if (is_string($this->profile_pic)) {
             return [
                 'name' => ['required', 'max:255'],
+                'email' => ['required', 'email', 'unique:users,email,' . $this->user->id],
                 'username' => ['required', 'min:3', 'max:255', 'unique:users,username,' . $this->user->id]
             ];
         } else {
             return [
                 'name' => ['required', 'max:255'],
+                'email' => ['required', 'email', 'unique:users,email,' . $this->user->id],
                 'username' => ['required', 'min:3', 'max:255', 'unique:users,username,' . $this->user->id],
                 'profile_pic' => ['image', 'nullable']
             ];
@@ -41,6 +44,7 @@ class EditForm extends Component
     public function mount(User $user)
     {
         $this->name = $user->name;
+        $this->email = $user->email;
         $this->username = $user->username;
         $this->profile_pic = $user->profile_pic;
     }

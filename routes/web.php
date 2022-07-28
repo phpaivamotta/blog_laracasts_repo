@@ -8,6 +8,8 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\NewPasswordController;
+use App\Http\Controllers\ResetPassword;
 
 // all posts or filtered posts (filtered by seach, or author)
 Route::get('/', [PostController::class, 'index'])->name('home');
@@ -37,6 +39,14 @@ Route::get('perfil/{user:username}', [SessionController::class, 'show'])->middle
 // user edit profile
 Route::get('perfil/{user:username}/editar', [SessionController::class, 'edit'])->middleware('auth');
 Route::patch('perfil/{user:username}', [SessionController::class, 'update'])->middleware('auth');
+
+//RESET PASSWORD
+Route::get('esqueci-senha', [ResetPassword::class, 'create'])->middleware('guest');
+
+Route::get('redefinir-senha/{token}', [NewPasswordController::class, 'create'])
+->name('password.reset');
+Route::post('redefinir-senha', [NewPasswordController::class, 'store'])
+->name('password.update');
 
 // Admin 
 Route::get('admin/painel', [AdminPostController::class, 'index'])->middleware('admin');

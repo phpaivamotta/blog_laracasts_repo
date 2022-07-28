@@ -7,6 +7,7 @@
             <form wire:submit.prevent="update" class="mt-10">
 
                 <x-form.input name="name" type="text" :value="old('name', $name)" id="Nome" />
+                <x-form.input name="email" type="email" :value="old('email', $email)" id="Email" />
                 <x-form.input name="username" type="text" :value="old('username', $username)" id="Nome de Usuário" />
 
                 {{-- user profile pic --}}

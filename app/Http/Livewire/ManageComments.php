@@ -42,6 +42,7 @@ class ManageComments extends Component
         // refresh model
         $this->post = Post::find($this->post->id);
         $this->comments = $this->post->comment;
+        $this->emit('updateCommentCount');
     }
 
     public function destroy()

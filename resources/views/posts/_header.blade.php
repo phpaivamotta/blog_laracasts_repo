@@ -11,7 +11,7 @@
                 <input type="text" 
                      name="search" 
                      placeholder="Buscar"
-                     class="bg-transparent placeholder-black font-semibold text-sm"
+                     class="bg-transparent placeholder-black text-sm"
                      value="{{request('search')}}">
             </form>
         </div>

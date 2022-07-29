@@ -20,13 +20,13 @@
 
             <div class="mt-8 md:mt-0 flex items-center">
 
-                <a href="/sobre" class="text-sm font-bold transition-colors duration-300 hover:text-blue-500">Sobre</a>
+                <a href="/sobre" class="text-sm font-semibold transition-colors duration-300 hover:text-blue-500">Sobre</a>
 
                 @auth
                     <x-dropdown>
 
                         <x-slot name="trigger">
-                            <button class="text-sm font-bold ml-6 transition-colors duration-300 hover:text-blue-500"
+                            <button class="text-sm font-semibold ml-6 transition-colors duration-300 hover:text-blue-500"
                                 name="trigger">Bem-vindo(a), {{ auth()->user()->name }}</button>
                         </x-slot>
 
@@ -48,9 +48,9 @@
                     </x-dropdown>
                 @else
                     <a href="/cadastro"
-                        class="text-sm font-bold ml-6 transition-colors duration-300 hover:text-blue-500">Cadastre-se</a>
+                        class="text-sm font-semibold ml-6 transition-colors duration-300 hover:text-blue-500">Cadastre-se</a>
                     <a href="/login"
-                        class="text-sm font-bold ml-6 transition-colors duration-300 hover:text-blue-500">Login</a>
+                        class="text-sm font-semibold ml-6 transition-colors duration-300 hover:text-blue-500">Login</a>
                 @endauth
 
                 <a href="#newsletter"

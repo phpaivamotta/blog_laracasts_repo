@@ -55,4 +55,5 @@ class Post extends Model
     {
         return $this->hasMany(Visitor::class);
     }
+
 }

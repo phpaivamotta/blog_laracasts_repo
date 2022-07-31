@@ -21,7 +21,7 @@ class ManagePosts extends Component
     public function render()
     {
         return view('livewire.manage-posts', [
-            'posts' => Post::with(['comment', 'likeCounter'])->paginate(50),
+            'posts' => Post::with(['comment.author', 'likes.user'])->paginate(50),
             'visitors' => Visitor::all()
         ]);
     }

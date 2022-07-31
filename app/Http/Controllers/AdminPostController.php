@@ -10,10 +10,7 @@ class AdminPostController extends Controller
 {
     public function index()
     {
-        return view('admin.posts.index', [
-            'posts' => Post::with(['comment', 'likeCounter'])->paginate(50),
-            'visitors' => Visitor::all()
-        ]);
+        return view('admin.posts.index');
     }
 
     

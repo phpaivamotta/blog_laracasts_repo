@@ -19,7 +19,7 @@
                                             <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
                                                 <div class="flex items-center">
 
-                                                    {{-- crazy dropdown --}}
+                                                    {{-- dropdown of users who commented on the post --}}
                                                     <x-dropdown-like-comment>
 
                                                         <x-slot name="trigger">

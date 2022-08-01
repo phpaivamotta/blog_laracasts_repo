@@ -61,9 +61,12 @@ class DeleteUser extends Component
     public function render()
     {
         return view('livewire.delete-user', [
-            'users' => User::with(['comments', 'likes'])
-                ->where('username', '!=', 'jessicaszklarz')
-                ->paginate(50),
+            'users' => User::with(['comments.post', 'likes.post'])
+                            ->where('username', '!=', 'jessicaszklarz')
+                            ->paginate(50),
+
+            'admin' => User::where('username', '=', 'jessicaszklarz')
+                            ->with(['comments.post', 'likes.post'])->first()
         ]);
     }
 }

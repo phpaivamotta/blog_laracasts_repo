@@ -1,13 +1,21 @@
-<!doctype html>
-<title>Poliana Porcelana Blog</title>
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/translations/pt.js"></script>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<script defer src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-@livewireStyles
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Poliana Porcelana Blog</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/translations/pt.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    @livewireStyles
+</head>
 
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
@@ -20,7 +28,8 @@
 
             <div class="mt-8 md:mt-0 flex items-center">
 
-                <a href="/sobre" class="text-sm font-semibold transition-colors duration-300 hover:text-blue-500">Sobre</a>
+                <a href="/sobre"
+                    class="text-sm font-semibold transition-colors duration-300 hover:text-blue-500">Sobre</a>
 
                 @auth
                     <x-dropdown>
@@ -133,3 +142,5 @@
     <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
         data-turbolinks-eval="false"></script>
 </body>
+
+</html>

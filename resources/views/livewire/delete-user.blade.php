@@ -20,7 +20,7 @@
                                                 <x-dropdown-like-comment>
 
                                                     <x-slot name="trigger">
-                                                        <button name="trigger">
+                                                        <span name="trigger">
                                                             <svg viewBox="-5 -5 30 30" version="1.1" width="20">
                                                                 <g id="Page-1" stroke="none" stroke-width="1"
                                                                     fill="#add4f4" fill-rule="evenodd">
@@ -31,7 +31,7 @@
                                                                     </g>
                                                                 </g>
                                                             </svg>
-                                                        </button>
+                                                        </span>
                                                     </x-slot>
 
                                                     @foreach ($user->comments->unique('post_id') as $comment)
@@ -55,13 +55,13 @@
                                                 <x-dropdown-like-comment>
 
                                                     <x-slot name="trigger">
-                                                        <button name="trigger">
+                                                        <span name="trigger">
                                                             <svg viewBox="-5 -5 30 30" width="20">
                                                                 <path fill="#add4f4"
                                                                     d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z">
                                                                 </path>
                                                             </svg>
-                                                        </button>
+                                                        </span>
                                                     </x-slot>
 
                                                     @foreach ( $user->likes->unique('likeable_id') as $like)
@@ -104,7 +104,7 @@
                                             <x-dropdown-like-comment>
 
                                                 <x-slot name="trigger">
-                                                    <button name="trigger">
+                                                    <span name="trigger">
                                                         <svg viewBox="-5 -5 30 30" version="1.1" width="20">
                                                             <g id="Page-1" stroke="none" stroke-width="1"
                                                                 fill="#add4f4" fill-rule="evenodd">
@@ -115,7 +115,7 @@
                                                                 </g>
                                                             </g>
                                                         </svg>
-                                                    </button>
+                                                    </span>
                                                 </x-slot>
 
                                                 @foreach ($admin->comments->unique('post_id') as $comment)
@@ -139,13 +139,13 @@
                                             <x-dropdown-like-comment>
 
                                                 <x-slot name="trigger">
-                                                    <button name="trigger">
+                                                    <span name="trigger">
                                                         <svg viewBox="-5 -5 30 30" width="20">
                                                             <path fill="#add4f4"
                                                                 d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z">
                                                             </path>
                                                         </svg>
-                                                    </button>
+                                                    </span>
                                                 </x-slot>
 
                                                 @foreach ($admin->likes->unique('likeable_id') as $like)

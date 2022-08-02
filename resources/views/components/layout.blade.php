@@ -16,10 +16,11 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Poliana Porcelana Blog</title>
+    <link rel="icon" href="/images/logo_blog_laracasts_nuvem.png">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/translations/pt.js"></script>
@@ -35,7 +36,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/logo_poliana_porcelana_blog.png" alt="Poliana Porcelana Logo" width="265">
+                    <img src="/images/logo_blog_laracasts_nuvem.png" alt="Poliana Porcelana Logo" width="80">
                 </a>
             </div>
 

@@ -36,7 +36,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/logo_blog_laracasts_nuvem.png" alt="Poliana Porcelana Logo" width="80">
+                    <img src="/images/logo_blog_laracasts_nuvem.png" alt="Poliana Porcelana Logo" width="100">
                 </a>
             </div>
 

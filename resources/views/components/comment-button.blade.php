@@ -1,7 +1,7 @@
 @auth
 
     <a href="#comment">
-        <svg viewBox="-10 -10 40 40" version="1.1" width="60" class="ml-4">
+        <svg viewBox="-10 -10 40 40" version="1.1" class="lg:w-16 w-32 ml-4">
             <g id="Page-1" stroke="none" stroke-width="1"
                 fill="{{ auth()->id() && $post->comment->where('user_id', auth()->id())->count() ? '#add4f4' : '#384348' }}"
                 fill-rule="evenodd">
@@ -14,11 +14,11 @@
         </svg>
     </a>
 
-    <span class="text-sm text-gray-700 font-semibold">{{ $post->comment->count() }}</span>
+    <span class="text-4xl lg:text-sm text-gray-700 font-semibold">{{ $post->comment->count() }}</span>
 
 @else
     
-    <svg viewBox="-10 -10 40 40" version="1.1" width="60" class="ml-4">
+    <svg viewBox="-10 -10 40 40" version="1.1" class="lg:w-16 w-32 ml-4">
         <g id="Page-1" stroke="none" stroke-width="1" fill="#384348" fill-rule="evenodd">
             <g id="icon-shape">
                 <path
@@ -28,6 +28,6 @@
         </g>
     </svg>
 
-    <span class="text-sm text-gray-700 font-semibold">{{ $post->comment->count() }}</span>
+    <span class="text-4xl lg:text-sm text-gray-700 font-semibold">{{ $post->comment->count() }}</span>
 
 @endauth

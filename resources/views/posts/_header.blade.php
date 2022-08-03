@@ -1,5 +1,5 @@
-<header class="max-w-xl mx-auto mt-20 text-center">
-    <h1 class="text-4xl">
+<header class="max-w-2xl mx-auto mt-20 text-center">
+    <h1 class="text-5xl">
         Últimas de <span class="text-blue-500">Poliana Porcelana</span>
     </h1>
     
@@ -11,7 +11,7 @@
                 <input type="text" 
                      name="search" 
                      placeholder="Buscar"
-                     class="bg-transparent placeholder-black text-sm"
+                     class="bg-transparent placeholder-black text-lg lg:text-sm"
                      value="{{request('search')}}">
             </form>
         </div>

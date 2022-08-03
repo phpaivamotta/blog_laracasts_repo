@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -43,13 +43,13 @@
             <div class="mt-8 md:mt-0 flex items-center">
 
                 <a href="/sobre"
-                    class="text-sm font-semibold transition-colors duration-300 hover:text-blue-500">Sobre</a>
+                    class="text-2xl lg:text-sm font-semibold transition-colors duration-300 hover:text-blue-500">Sobre</a>
 
                 @auth
                     <x-dropdown>
 
                         <x-slot name="trigger">
-                            <button class="text-sm font-semibold ml-6 transition-colors duration-300 hover:text-blue-500"
+                            <button class="text-2xl lg:text-sm font-semibold ml-6 transition-colors duration-300 hover:text-blue-500"
                                 name="trigger">Bem-vindo(a), {{ auth()->user()->name }}</button>
                         </x-slot>
 
@@ -71,13 +71,13 @@
                     </x-dropdown>
                 @else
                     <a href="/cadastro"
-                        class="text-sm font-semibold ml-6 transition-colors duration-300 hover:text-blue-500">Cadastre-se</a>
+                        class="text-2xl lg:text-sm font-semibold ml-6 transition-colors duration-300 hover:text-blue-500">Cadastre-se</a>
                     <a href="/login"
-                        class="text-sm font-semibold ml-6 transition-colors duration-300 hover:text-blue-500">Login</a>
+                        class="text-2xl lg:text-sm font-semibold ml-6 transition-colors duration-300 hover:text-blue-500">Login</a>
                 @endauth
 
                 <a href="#newsletter"
-                    class="bg-blue-500 ml-6 rounded-full text-sm font-semibold text-white py-3 px-5 transition-colors duration-300 hover:bg-blue-600">
+                    class="bg-blue-500 ml-6 rounded-full text-2xl lg:text-sm font-semibold text-white py-5 px-8 lg:py-3 lg:px-5 transition-colors duration-300 hover:bg-blue-600">
                     Inscreva-se
                 </a>
 

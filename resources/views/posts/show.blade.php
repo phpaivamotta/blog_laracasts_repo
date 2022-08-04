@@ -1,7 +1,7 @@
 <x-layout>
-    <section class="px-6 py-8">
+    <section class="px-0 lg:px-6 py-8">
         <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
-            <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
+            <article class="max-w-5xl lg:max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
                 <div class="col-span-4 lg:text-center pt-14 lg:pt-14 mb-10">
                     <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl">
 
@@ -9,7 +9,7 @@
                         Publicado <time> {{ $post->created_at->diffForHumans() }} </time>
                     </p>
 
-                    <div class="flex items-center lg:justify-left text-2xl lg:text-sm mt-10 lg:mt-4">
+                    <div class="flex items-center lg:justify-left text-4xl lg:text-sm mt-10 lg:mt-4">
 
                         <a href="/sobre">
                             <img src="{{ isset($post->author->profile_pic)
@@ -65,7 +65,7 @@
                         {{ $post->title }}
                     </h1>
 
-                    <div class="space-y-4 text-4xl lg:text-lg leading-loose">
+                    <div class="space-y-4 text-4nhalfxl lg:text-lg leading-loose">
                         {!! $post->body !!}
                     </div>
 

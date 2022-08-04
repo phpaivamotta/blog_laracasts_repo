@@ -65,7 +65,7 @@
                         {{ $post->title }}
                     </h1>
 
-                    <div class="space-y-4 text-4nhalfxl lg:text-lg leading-loose">
+                    <div class="space-y-4 text-5xl lg:text-lg leading-loose">
                         {!! $post->body !!}
                     </div>
 

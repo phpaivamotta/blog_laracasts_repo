@@ -1,7 +1,7 @@
 <div class="px-6 py-8">
-    <main class="max-w-lg mx-auto mt-10">
+    <main class="max-w-3xl lg:max-w-lg mx-auto mt-10">
         <x-panel>
-            <h1 class="text-center font-bold text-xl">Cadastre-se</h1>
+            <h1 class="text-center font-bold text-5xl lg:text-xl">Cadastre-se</h1>
 
             <form wire:submit.prevent="store" enctype="multipart/form-data" class="mt-10">
                 @csrf
@@ -26,8 +26,8 @@
 
                     </div>
 
-                    <button type="button">
-                        <svg wire:click="removeSelectedProfilePic" viewBox="-5 -5 30 30" width="30" version="1.1"
+                    <button type="button" class="mt-6 lg:mt-0">
+                        <svg wire:click="removeSelectedProfilePic" viewBox="-5 -5 30 30" version="1.1" class="w-11 lg:w-8"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g id="Page-1" stroke="none" stroke-width="1" fill="black" fill-rule="evenodd">
                                 <g id="icon-shape">
@@ -49,10 +49,10 @@
                             }
                         @endphp
 
-                        <img src="{{ $tempUrl }}" alt="Foto de Perfil" class="rounded-xl ml-6 square"
+                        <img src="{{ $tempUrl }}" alt="Foto de Perfil" class="rounded-xl ml-6 w-32 h-32 lg:w-16 lg:h-16"
                             width="100">
                     @else
-                        <img src="/images/generic_profile_pic.png" alt="Foto de Perfil" class="rounded-xl ml-6 square"
+                        <img src="/images/generic_profile_pic.png" alt="Foto de Perfil" class="rounded-xl ml-6 w-32 h-32 lg:w-16 lg:h-16"
                             width="100">
                     @endif
 
@@ -60,7 +60,7 @@
                 {{-- end user profile pic --}}
                 <x-form.input name="password" type="password" id="Senha" />
 
-                <a href="/login" class="text-xs text-blue-500 hover:text-blue-900 underline inline-block mb-6">
+                <a href="/login" class="text-xl lg:text-xs text-blue-500 hover:text-blue-900 underline inline-block mb-6">
                     Já é cadastrado?
                 </a>
 

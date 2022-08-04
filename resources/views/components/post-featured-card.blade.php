@@ -23,7 +23,7 @@
                 </div>
             </header>
 
-            <div class="text-2xl lg:text-sm mt-6 lg:mt-2 space-y-4">
+            <div class="text-3xl lg:text-sm mt-6 lg:mt-2 space-y-4">
                 {!! $post->excerpt !!}
             </div>
 

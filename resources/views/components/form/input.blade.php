@@ -3,7 +3,7 @@
 <x-form.field>
     <x-form.label name="{{ $id }}" />
 
-    <input wire:model="{{ $name }}" class="border border-gray-400 p-2 w-full" name="{{ $name }}"
+    <input wire:model="{{ $name }}" class="border text-3xl lg:text-base border-gray-400 p-2 w-full" name="{{ $name }}"
         id="{{ $name }}" {{ $attributes(['value' => old($name)]) }}>
 
     <x-form.error name="{{ $name }}" />

@@ -32,7 +32,7 @@
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
-    <section class="px-3 lg:px-6 py-8">
+    <section class="px-3 lg:px-6 py-8 flex flex-col min-h-screen">
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
@@ -87,7 +87,7 @@
         {{ $slot }}
 
         <footer id="newsletter"
-            class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
+            class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-auto">
 
             <h5 class="text-5xl lg:text-3xl">Receba notificações de novos posts.</h5>
 

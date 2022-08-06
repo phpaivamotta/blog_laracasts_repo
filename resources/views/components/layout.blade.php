@@ -79,8 +79,9 @@
                         <a href="#" x-data="{}" class="py-2 hover:bg-gray-700"
                             @click.prevent="document.querySelector('#logout-form').submit()">Logout</a>
                     @else
-                        <a href="/cadastro" class="py-2 hover:bg-gray-700">Cadastre-se</a>
-                        <a href="/login" class="py-2 hover:bg-gray-700">Login</a>
+                        <a href="/cadastro" class="{{ request()->is('cadastro') ? 'bg-gray-700' : '' }} py-2 hover:bg-gray-700">Cadastre-se</a>
+                        <a href="/login" class="{{ request()->is('login') ? 'bg-gray-700' : '' }} py-2 hover:bg-gray-700">Login</a>
+                        <a href="#newsletter" class="py-2 hover:bg-gray-700">Inscreva-se</a>
                     @endauth
 
                 </div>

@@ -41,7 +41,7 @@
                 </a>
             </div>
 
-            {{-- mobile navbar links --}}
+            {{-- mobile navbar --}}
             <div x-data={show:false} @click.away="show=false" class="block lg:hidden">
 
                 {{-- navbar sandwich --}}
@@ -105,7 +105,12 @@
                             <x-dropdown-item href="/admin/posts/criar" :active="request()->is('admin/posts/criar')">Novo Post</x-dropdown-item>
                         @endadmin
 
-                        <x-dropdown-item href="/perfil/{{ auth()->user()->username }}" :active="request()->is('perfil/{{ auth()->user()->username }}')">Perfil
+                        {{-- had to use this trick to get username because the ->is() method does not accept {{  }} --}}
+                        @php
+                            $username = auth()->user()->username;    
+                        @endphp
+
+                        <x-dropdown-item href="/perfil/{{ auth()->user()->username }}" :active="request()->is('perfil/'.$username)">Perfil
                         </x-dropdown-item>
 
                         <x-dropdown-item href="#" x-data="{}"

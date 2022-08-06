@@ -1,5 +1,5 @@
-<header class="max-w-2xl mx-auto mt-2 lg:mt-20 text-center">
-    <h1 class="text-2xl lg:text-5xl">
+<header class="max-w-2xl mx-auto mt-7 lg:mt-20 text-center">
+    <h1 class="text-2xl md:text-3xl lg:text-5xl">
         Últimas de <span class="text-blue-500">Poliana Porcelana</span>
     </h1>
     

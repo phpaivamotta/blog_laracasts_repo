@@ -41,8 +41,10 @@
                 </a>
             </div>
 
+            {{-- mobile navbar links --}}
             <div x-data={show:false} @click.away="show=false" class="block lg:hidden">
 
+                {{-- navbar sandwich --}}
                 <button @click="show=!show" class="absolute top-5 right-2">
                     <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" class="w-6">
@@ -56,19 +58,26 @@
                     </svg>
                 </button>
 
+                {{-- expanding links --}}
                 <div x-show="show" class="flex flex-col text-center text-white font-semibold text-xl mt-2 bg-blue-500"
                     style="display:none">
 
-                    <a href="/sobre" class="py-2 hover:bg-gray-700">Sobre</a>
-
+                    <a href="/sobre"
+                        class="{{ request()->is('sobre') ? 'bg-gray-700' : '' }} py-2 hover:bg-gray-700">Sobre</a>
                     @auth
-                        <a href="/perfil/{{ auth()->user()->username }}" class="py-2 hover:bg-gray-700 {{ request()->is('perfil/editar') ? 'bg-green' : ''}}">Perfil</a>
+                        @admin
+                            <a href="/admin/painel" class="{{ request()->is('admin/painel') ? 'bg-gray-700' : '' }} py-2 hover:bg-gray-700">Painel</a>
+                            <a href="/admin/posts/criar" class="{{ request()->is('admin/posts/criar') ? 'bg-gray-700' : '' }} py-2 hover:bg-gray-700">Novo Post</a>
+                        @endadmin
+
+                        {{-- had to use this trick to get username because the ->is() method does not accept {{  }} --}}
+                        @php
+                            $username = auth()->user()->username;    
+                        @endphp
+
+                        <a href="/perfil/{{ auth()->user()->username }}" class="{{ request()->is('perfil/'.$username) ? 'bg-gray-700' : '' }} py-2 hover:bg-gray-700">Perfil</a>
                         <a href="#" x-data="{}" class="py-2 hover:bg-gray-700"
                             @click.prevent="document.querySelector('#logout-form').submit()">Logout</a>
-                        @admin
-                            <a href="/admin/painel" class="py-2 hover:bg-gray-700">Painel</a>
-                            <a href="/admin/posts/criar" class="py-2 hover:bg-gray-700">Novo Post</a>
-                        @endadmin
                     @else
                         <a href="/cadastro" class="py-2 hover:bg-gray-700">Cadastre-se</a>
                         <a href="/login" class="py-2 hover:bg-gray-700">Login</a>
@@ -96,7 +105,7 @@
                             <x-dropdown-item href="/admin/posts/criar" :active="request()->is('admin/posts/criar')">Novo Post</x-dropdown-item>
                         @endadmin
 
-                        <x-dropdown-item href="/perfil/{{ auth()->user()->username }}" :active="request()->is('perfil/editar')">Perfil
+                        <x-dropdown-item href="/perfil/{{ auth()->user()->username }}" :active="request()->is('perfil/{{ auth()->user()->username }}')">Perfil
                         </x-dropdown-item>
 
                         <x-dropdown-item href="#" x-data="{}"

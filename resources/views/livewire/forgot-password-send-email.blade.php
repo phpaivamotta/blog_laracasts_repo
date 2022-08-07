@@ -1,7 +1,7 @@
 <div class="px-6 py-8">
     <main class="max-w-lg mx-auto mt-10">
         <x-panel>
-            <h1 class="text-center font-bold text-xl">Esqueci Senha</h1>
+            <h1 class="text-center font-bold text-2xl lg:text-xl">Esqueci Senha</h1>
 
             <p class="text-sm mt-6 text-gray-500">
                 Preencha o campo abaixo com o seu email para receber o link de mudança de senha.

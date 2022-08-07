@@ -1,7 +1,7 @@
 <div class="px-6 py-8">
     <main class="max-w-lg mx-auto mt-10">
         <x-panel>
-            <h1 class="text-center font-bold text-xl">Redefinir Senha</h1>
+            <h1 class="text-center font-bold text-2xl lg:text-xl mb-6">Redefinir Senha</h1>
 
             <!-- user input form  -->
             <form wire:submit.prevent="store">

@@ -7,17 +7,17 @@
             </a>
         </div>
 
-        <div class="flex-1 flex flex-col justify-between">
+        <div class="px-2 lg:px-0 flex-1 flex flex-col justify-between">
             <header class="mt-2 lg:mt-0">
 
                 <div>
-                    <h1 class="text-xl font-bold lg:font-normal lg:text-3xl">
+                    <h1 class="text-2xl font-bold lg:font-normal lg:text-3xl">
                         <a href="/posts/{{$post->slug}}" class="transition-colors duration-300 hover:text-blue-500">
                             {{ $post->title }}
                         </a>
                     </h1>
 
-                    <span class="mt-2 block text-gray-400 text-xs lg:text-xs">
+                    <span class="mt-2 block text-gray-400 text-xs">
                         Publicado <time>{{$post->created_at->diffForHumans()}}</time>
                     </span>
                 </div>

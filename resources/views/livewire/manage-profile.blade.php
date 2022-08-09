@@ -6,17 +6,17 @@
                     <div class="bg-pink-200 rounded-t-xl">
                         <div class="flex justify-center pt-10 pb-4">
                             <img src="{{ isset($user->profile_pic) ? asset('storage/' . $user->profile_pic) : '/images/generic_profile_pic.png' }}"
-                                alt="Foto de Perfil" class="w-8/12 lg:w-52 rounded-xl">
+                                alt="Foto de Perfil" class="w-48 h-48 rounded-xl">
                         </div>
 
-                        <h1 class="font-semibold text-gray-800 pb-6 lg:pb-3 text-center text-4xl lg:text-2xl">{{ $user->name }}</h1>
+                        <h1 class="font-semibold text-gray-800 pb-6 lg:pb-3 text-center text-xl">{{ $user->name }}</h1>
                     </div>
 
-                    <div class="py-6 mt-6 ml-16 space-y-4">
+                    <div class="mx-auto mt-6 space-y-4">
 
                         {{-- email --}}
                         <div class="flex items-center space-x-2">
-                            <svg viewBox="-10 -10 40 40" version="1.1" class="w-24 lg:w-12"
+                            <svg viewBox="-10 -10 40 40" version="1.1" class="w-10 lg:w-12"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g id="icon-shape">
@@ -27,12 +27,12 @@
                                 </g>
                             </svg>
 
-                            <p class="text-4xl lg:text-base">{{ $user->email }}</p>
+                            <p class="text-sm lg:text-base">{{ $user->email }}</p>
                         </div>
 
                         {{-- username --}}
                         <div class="flex items-center space-x-2">
-                            <svg viewBox="-10 -10 40 40" version="1.1" class="w-24 lg:w-12"
+                            <svg viewBox="-10 -10 40 40" version="1.1" class="w-10 lg:w-12"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g id="icon-shape">
@@ -43,7 +43,7 @@
                                 </g>
                             </svg>
 
-                            <p class="text-4xl lg:text-base">{{ $user->username }}</p>
+                            <p class="text-sm lg:text-base">{{ $user->username }}</p>
                         </div>
 
                     </div>
@@ -51,10 +51,10 @@
                     @if (auth()->user() == $user)
                         <div class="flex mt-6 mb-4 justify-center items-center space-x-6">
                             <a href="/perfil/{{ $user->username }}/editar"
-                                class="flex items-center bg-blue-400 text-white rounded-xl lg:rounded py-4 px-8 lg:py-2 lg:px-4 lg:text-base text-4xl hover:bg-blue-500 disabled:opacity-60">Editar</a>
+                                class="flex items-center bg-blue-400 text-white rounded py-2 px-4 lg:text-base text-lg hover:bg-blue-500 disabled:opacity-60">Editar</a>
 
                             <button type="button" wire:click="confirmDelete"
-                                class="flex items-center bg-red-600 text-white rounded-xl lg:rounded py-4 px-8 lg:py-2 lg:px-4 lg:text-base text-4xl hover:bg-red-500 disabled:opacity-60">Deletar</button>
+                                class="flex items-center bg-red-400 text-white rounded py-2 px-4 lg:text-base text-lg hover:bg-red-500 disabled:opacity-60">Deletar</button>
                         </div>
                     @endif
 

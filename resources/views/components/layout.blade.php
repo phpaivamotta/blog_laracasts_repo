@@ -63,11 +63,11 @@
                     style="display:none">
 
                     <a href="/sobre"
-                        class="{{ request()->is('sobre') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600">Sobre</a>
+                        class="{{ request()->is('sobre') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Sobre</a>
                     @auth
                         @admin
-                            <a href="/admin/painel" class="{{ request()->is('admin/painel') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600">Painel</a>
-                            <a href="/admin/posts/criar" class="{{ request()->is('admin/posts/criar') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600">Novo Post</a>
+                            <a href="/admin/painel" class="{{ request()->is('admin/painel') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Painel</a>
+                            <a href="/admin/posts/criar" class="{{ request()->is('admin/posts/criar') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Novo Post</a>
                         @endadmin
 
                         {{-- had to use this trick to get username because the ->is() method does not accept {{  }} --}}
@@ -75,13 +75,13 @@
                             $username = auth()->user()->username;    
                         @endphp
 
-                        <a href="/perfil/{{ auth()->user()->username }}" class="{{ request()->is('perfil/'.$username) ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600">Perfil</a>
-                        <a href="#" x-data="{}" class="py-2 hover:bg-blue-600"
+                        <a href="/perfil/{{ auth()->user()->username }}" class="{{ request()->is('perfil/'.$username) ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Perfil</a>
+                        <a href="#" x-data="{}" class="py-2 hover:bg-blue-600 drop-shadow-lg"
                             @click.prevent="document.querySelector('#logout-form').submit()">Logout</a>
                     @else
-                        <a href="/cadastro" class="{{ request()->is('cadastro') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600">Cadastre-se</a>
-                        <a href="/login" class="{{ request()->is('login') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600">Login</a>
-                        <a href="#newsletter" class="py-2 hover:bg-blue-600">Inscreva-se</a>
+                        <a href="/cadastro" class="{{ request()->is('cadastro') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Cadastre-se</a>
+                        <a href="/login" class="{{ request()->is('login') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Login</a>
+                        <a href="#newsletter" class="py-2 hover:bg-blue-600 drop-shadow-lg">Inscreva-se</a>
                     @endauth
 
                 </div>

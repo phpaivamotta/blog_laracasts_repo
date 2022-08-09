@@ -8,14 +8,14 @@
                         Sobre Poliana Porcelana
                     </h1>
 
-                    <div class="flex items-center justify-center">
-                        <img src="{{ asset('storage/' . $user->profile_pic) }}" alt="Foto de Perfil" class="rounded-xl">
+                    <div class="flex items-center justify-center lg:justify-start">
+                        <img src="{{ asset('storage/' . $admin->profile_pic) }}" alt="Foto de Perfil" class="rounded-xl w-48 h-48">
                     </div>
 
                     <div class="flex items-center justify-center lg:justify-start text-xl mt-4">
 
                         <div class="text-left">
-                            <h5 class="font-semibold">{{ $user->name }}</h5>
+                            <h5 class="font-semibold">{{ $admin->name }}</h5>
                         </div>
 
                     </div>
@@ -65,7 +65,7 @@
                     </h1>
 
                     <div class="space-y-4 text-lg lg:text-sm leading-loose">
-                        {!! $user->about->body !!}
+                        {!! $admin->about->body !!}
                     </div>
 
                 </div>

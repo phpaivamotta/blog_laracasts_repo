@@ -1,7 +1,7 @@
 <div x-data="{ show: @entangle($attributes->wire('model')) }" x-show="show" @keydown.escape.window="show=false" style="display: none">
     <div class="fixed inset-0 bg-white opacity-60" @click="show = false"></div>
 
-    <div class="bg-white border border-gray-400 shadow-sm p-4 max-w-sm m-auto rounded-md fixed inset-0 h-56"
+    <div class="bg-white border border-gray-400 shadow-sm p-4 lg:max-w-sm max-w-xs m-auto rounded-md fixed inset-0 h-56"
         x-show.transition="show">
         <div class="flex flex-col h-full justify-between">
             <header>

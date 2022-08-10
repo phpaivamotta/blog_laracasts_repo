@@ -19,7 +19,7 @@ class CreatePost extends Component
 
     protected $rules = [
         'title' => 'required',
-        'thumbnail' => 'required|image',
+        'thumbnail' => 'required|image|max:30720',
         'slug' => 'required|unique:posts,slug',
         'excerpt' => 'required',
         'body' => 'required',

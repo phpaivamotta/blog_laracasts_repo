@@ -32,7 +32,7 @@ class EditForm extends Component
                 'name' => ['required', 'max:255'],
                 'email' => ['required', 'email', 'unique:users,email,' . $this->user->id],
                 'username' => ['required', 'min:3', 'max:255', 'unique:users,username,' . $this->user->id],
-                'profile_pic' => ['image', 'nullable']
+                'profile_pic' => ['image', 'nullable', 'max:30720']
             ];
         }
     }

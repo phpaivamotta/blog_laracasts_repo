@@ -31,7 +31,7 @@ class EditPostForm extends Component
         } else {
             return [
                 'title' => ['required'],
-                'thumbnail' => ['required', 'image'],
+                'thumbnail' => ['required', 'image', 'max:30720'],
                 'slug' => ['required', 'unique:posts,slug,' . $this->post->id],
                 'excerpt' => ['required'],
                 'body' => ['required'],

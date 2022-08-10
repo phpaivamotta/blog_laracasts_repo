@@ -7,7 +7,19 @@
 
             {{-- Thumbnail: how I might handle it --}}
             <div class="flex mt-6">
-                <div class="flex-1">
+                <div 
+                    class="flex-1"
+                    x-data="{ isUploading: false, progress: 0 }" x-on:livewire-upload-start="isUploading = true"
+                    x-on:livewire-upload-finish="isUploading = false"
+                    x-on:livewire-upload-error="isUploading = false"
+                    x-on:livewire-upload-progress="progress = $event.detail.progress"
+                >
+
+                <!-- Progress Bar -->
+                <div x-show="isUploading" style="display:none">
+                    <progress max="100" x-bind:value="progress"></progress>
+                </div>
+
                     <x-form.input name="thumbnail" type="file" id="Miniatura" />
                 </div>
 

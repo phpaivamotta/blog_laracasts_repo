@@ -60,6 +60,3 @@ Route::get('admin/painel/usuários', [AdminUserController::class, 'index'])->mid
 // easteregg
 Route::view('matzá', 'easteregg.easteregg')->middleware('admin');
 
-// php info test
-Route::view('phpinfo', 'easteregg.phpinfo');
-

@@ -11,7 +11,7 @@
                 <x-form.input name="username" type="text" :value="old('username', $username)" id="Nome de Usuário" />
 
                 {{-- user profile pic --}}
-                <div class="flex items-center mt-6 mb-2">
+                <div class="lg:flex lg:items-center mt-6 mb-2">
                     <div class="flex-1">
 
                         <x-form.field>
@@ -27,41 +27,45 @@
 
                     </div>
 
-                    <button type="button">
-                        <svg wire:click="removeSelectedProfilePic" viewBox="-5 -5 30 30" width="30" version="1.1"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="Page-1" stroke="none" stroke-width="1" fill="black" fill-rule="evenodd">
-                                <g id="icon-shape">
-                                    <polygon id="Combined-Shape"
-                                        points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644">
-                                    </polygon>
+                    <div class="flex items-center mb-6 lg:mb-0">
+                        <button type="button">
+                            <svg wire:click="removeSelectedProfilePic" viewBox="-5 -5 30 30" class="w-11 lg:w-8"
+                                version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="black" fill-rule="evenodd">
+                                    <g id="icon-shape">
+                                        <polygon id="Combined-Shape"
+                                            points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644">
+                                        </polygon>
+                                    </g>
                                 </g>
-                            </g>
-                        </svg>
-                    </button>
+                            </svg>
+                        </button>
 
-                    @if ($profile_pic)
+                        @if ($profile_pic)
 
-                        {{-- check to see if $profile_pic is a string because if it is, then it has already been stored into the storage public/storage folder --}}
-                        @if (is_string($profile_pic))
-                            <img src="{{ asset('storage/' . $profile_pic) }}" alt="Foto de Perfil"
-                                class="rounded-xl ml-6 square" width="100">
+                            {{-- check to see if $profile_pic is a string because if it is, then it has already been stored into the storage public/storage folder --}}
+                            @if (is_string($profile_pic))
+                                <img src="{{ asset('storage/' . $profile_pic) }}" alt="Foto de Perfil"
+                                    class="rounded-xl ml-6 w-32 h-32 lg:w-16 lg:h-16" width="100">
+                            @else
+                                @php
+                                    try {
+                                        $tempUrl = $profile_pic->temporaryUrl();
+                                    } catch (\Exception $e) {
+                                        $tempUrl = '/images/generic_profile_pic.png';
+                                    }
+                                @endphp
+
+                                <img src="{{ $tempUrl }}" alt="Foto de Perfil"
+                                    class="rounded-xl ml-6 w-32 h-32 lg:w-16 lg:h-16" width="100">
+                            @endif
                         @else
-                            @php
-                                try {
-                                    $tempUrl = $profile_pic->temporaryUrl();
-                                } catch (\Exception $e) {
-                                    $tempUrl = '/images/generic_profile_pic.png';
-                                }
-                            @endphp
-
-                            <img src="{{ $tempUrl }}" alt="Foto de Perfil" class="rounded-xl ml-6 square"
-                                width="100">
+                            <img src="/images/generic_profile_pic.png" alt="Foto de Perfil"
+                                class="rounded-xl ml-6 w-32 h-32 lg:w-16 lg:h-16" width="100">
                         @endif
-                    @else
-                        <img src="/images/generic_profile_pic.png" alt="Foto de Perfil" class="rounded-xl ml-6 square"
-                            width="100">
-                    @endif
+
+                    </div>
 
                 </div>
                 {{-- end user profile pic --}}

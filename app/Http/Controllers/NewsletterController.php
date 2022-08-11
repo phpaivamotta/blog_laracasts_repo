@@ -21,7 +21,7 @@ class NewsletterController extends Controller
             ]);
         }
 
-        return redirect('/')->with('success', 'Parabéns, você se inscreveu na newsletter!');
+        return redirect('/')->with('success', 'Parabéns, você se inscreveu na nossa newsletter!');
 
     }
 }

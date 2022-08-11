@@ -66,21 +66,27 @@
                         class="{{ request()->is('sobre') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Sobre</a>
                     @auth
                         @admin
-                            <a href="/admin/painel" class="{{ request()->is('admin/painel') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Painel</a>
-                            <a href="/admin/posts/criar" class="{{ request()->is('admin/posts/criar') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Novo Post</a>
+                            <a href="/admin/painel"
+                                class="{{ request()->is('admin/painel') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Painel</a>
+                            <a href="/admin/posts/criar"
+                                class="{{ request()->is('admin/posts/criar') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Novo
+                                Post</a>
                         @endadmin
 
                         {{-- had to use this trick to get username because the ->is() method does not accept {{  }} --}}
                         @php
-                            $username = auth()->user()->username;    
+                            $username = auth()->user()->username;
                         @endphp
 
-                        <a href="/perfil/{{ auth()->user()->username }}" class="{{ request()->is('perfil/'.$username) ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Perfil</a>
+                        <a href="/perfil/{{ auth()->user()->username }}"
+                            class="{{ request()->is('perfil/' . $username) ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Perfil</a>
                         <a href="#" x-data="{}" class="py-2 hover:bg-blue-600 drop-shadow-lg"
                             @click.prevent="document.querySelector('#logout-form').submit()">Logout</a>
                     @else
-                        <a href="/cadastro" class="{{ request()->is('cadastro') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Cadastre-se</a>
-                        <a href="/login" class="{{ request()->is('login') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Login</a>
+                        <a href="/cadastro"
+                            class="{{ request()->is('cadastro') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Cadastre-se</a>
+                        <a href="/login"
+                            class="{{ request()->is('login') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Login</a>
                         <a href="#newsletter" class="py-2 hover:bg-blue-600 drop-shadow-lg">Inscreva-se</a>
                     @endauth
 
@@ -108,10 +114,10 @@
 
                         {{-- had to use this trick to get username because the ->is() method does not accept {{  }} --}}
                         @php
-                            $username = auth()->user()->username;    
+                            $username = auth()->user()->username;
                         @endphp
 
-                        <x-dropdown-item href="/perfil/{{ auth()->user()->username }}" :active="request()->is('perfil/'.$username)">Perfil
+                        <x-dropdown-item href="/perfil/{{ auth()->user()->username }}" :active="request()->is('perfil/' . $username)">Perfil
                         </x-dropdown-item>
 
                         <x-dropdown-item href="#" x-data="{}"
@@ -149,23 +155,20 @@
 
             <div class="mt-10">
                 <div class="inline-block mx-auto bg-gray-200 rounded-full">
-
                     <form method="POST" action="/newsletter" class="flex text-sm">
-                        <input type="hidden" name="_token" value="tIyC58JN1ltk9qMOdTbl6tZblaga9bBgnXhd3So7">
-                        <div class="py-3 px-5 flex items-center">
+                        @csrf
 
-                            <label for="email" class="inline-block">
+                        {{-- <input type="hidden" name="_token" value="tIyC58JN1ltk9qMOdTbl6tZblaga9bBgnXhd3So7"> --}}
+
+                        <div class="py-3 px-5 flex items-center">
+                            <label for="newsletterEmail" class="inline-block">
                                 <img src="/images/mailbox-icon.svg" alt="mailbox letter" class="w-4 lg:w-5">
                             </label>
 
                             <div>
-
-                                <input id="email" name="email" type="text" placeholder="Seu endereço de email"
+                                <input id="newsletterEmail" name="newsletterEmail" type="text" placeholder="Seu endereço de email"
                                     class="bg-transparent py-0 pl-4 text-xs lg:text-sm focus-within:outline-none">
-
-
                             </div>
-
                         </div>
 
                         <button type="submit"
@@ -175,6 +178,10 @@
                     </form>
                 </div>
             </div>
+
+            @error('newsletterEmail')
+                <span class="block mt-1 text-red-500 text-xs"> {{ $message }} </span>
+            @enderror
 
 
             <!-- social media -->

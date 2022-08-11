@@ -44,9 +44,9 @@ Route::patch('perfil/{user:username}', [SessionController::class, 'update'])->mi
 Route::get('esqueci-senha', [ResetPassword::class, 'create'])->middleware('guest');
 
 Route::get('redefinir-senha/{token}', [NewPasswordController::class, 'create'])
-->name('password.reset');
+    ->name('password.reset');
 Route::post('redefinir-senha', [NewPasswordController::class, 'store'])
-->name('password.update');
+    ->name('password.update');
 
 // Admin 
 Route::get('admin/painel', [AdminPostController::class, 'index'])->middleware('admin');
@@ -59,4 +59,3 @@ Route::patch('admin/sobre', [AboutController::class, 'update'])->middleware('adm
 Route::get('admin/painel/usuários', [AdminUserController::class, 'index'])->middleware('admin');
 // easteregg
 Route::view('matzá', 'easteregg.easteregg')->middleware('admin');
-

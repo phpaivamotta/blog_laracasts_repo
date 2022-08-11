@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
         app()->bind(Newsletter::class, function(){
            $client = (new ApiClient)->setConfig([
                 'apiKey' => config('services.mailchimp.key'),
-                'server' => 'us9'
+                'server' => 'us18'
             ]);
         
             return new MailchimpNewsletter($client);

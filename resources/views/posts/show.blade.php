@@ -8,7 +8,7 @@
                         {{ $post->title }}
                     </h1>
 
-                    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="imagem" class="rounded-xl w-full">
+                    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="imagem" class="lg:rounded-xl w-full">
 
                     <p class="mt-4 block text-gray-400 text-xs lg:px-0 px-2">
                         Publicado <time> {{ $post->created_at->diffForHumans() }} </time>

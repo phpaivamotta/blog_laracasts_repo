@@ -1,6 +1,6 @@
 <header class="max-w-2xl mx-auto mt-7 lg:mt-20 text-center">
     <h1 class="text-2xl md:text-3xl lg:text-5xl">
-        Últimas de <span class="text-blue-500">Poliana Porcelana</span>
+        <span class="text-pink-300">Poliana</span><span class="text-blue-500"> Porcelana</span>
     </h1>
     
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">

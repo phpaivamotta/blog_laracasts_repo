@@ -4,7 +4,7 @@
             <article class="max-w-5xl lg:max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
                 <div class="col-span-4 lg:text-center pt-0 lg:pt-14 lg:mb-10 mb-6">
 
-                    <h1 class="lg:hidden text-center px-2 font-bold text-3xl mb-6">
+                    <h1 class="lg:hidden px-2 font-bold text-3xl mb-6">
                         {{ $post->title }}
                     </h1>
 

@@ -38,7 +38,7 @@
                                                             </span>
                                                         </x-slot>
 
-                                                        @foreach ($post->comment->unique('username') as $comment)
+                                                        @foreach ($post->comment->unique('user_id') as $comment)
                                                             <p class="block text-left px-3 text-sm leading-6">
                                                                 {{ $comment->author->username }}
                                                             </p>

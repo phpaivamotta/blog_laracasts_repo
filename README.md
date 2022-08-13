@@ -39,7 +39,7 @@ The TALL stack (Tailwindcss, Alpine.js, Laravel, and Livewire) was used for the 
 I feel like it is a bit of a shame that most of the features I have implemented on my own are features only the admin can use, such as seeing who liked and commented on a post, or how many views the post got, or even being able to delete a comment. Because of that, below are some screenshots of the admin view, so that you can have a peek at the features implemented. It should be noted that I had to translate the site to Portuguese because my partner's blog is written in Portuguese and focused on a Brazilian audience, so the text in the screenshots you are about to see was translated by Google Translate from Portuguese to English. 
 
 #### Admin posts dashboard
-![image](https://user-images.githubusercontent.com/29764933/184432392-5c7c2a9a-1f90-4581-9827-d530efde1c22.png)
+![image](https://user-images.githubusercontent.com/29764933/184462753-681c5cb8-9e14-441d-afd9-8ea004a02e0a.png)
 Note: "To Edit" should have instead simply been "Edit".
 
 #### Admin posts dashboard delete modal

@@ -159,16 +159,20 @@
         </div>
     </x-setting>
 
-    @if ($posts->count())
-        <x-modal-delete wire:model.defer="modalDelete" :object="$post">post
-            <strong>({{ $currentPost->title }})</strong>
-        </x-modal-delete>
+    <div>
+        @if ($posts->count())
+            <x-modal-delete wire:model.defer="modalDelete" :object="$post">post
+                <strong>({{ $currentPost->title }})</strong>
+            </x-modal-delete>
 
-        <x-modal-hide wire:model.defer="modalHide" :currentPost="$currentPost">post
-            <strong>({{ $currentPost->title }})</strong>
-        </x-modal-hide>
-    @endif
+            <x-modal-hide wire:model.defer="modalHide" :currentPost="$currentPost">post
+                <strong>({{ $currentPost->title }})</strong>
+            </x-modal-hide>
+        @endif
+    </div>
 
-    <x-flash />
+    <div>
+        <x-flash />
+    </div>
 
 </div>

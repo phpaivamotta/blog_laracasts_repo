@@ -142,6 +142,8 @@
 
                                         <td></td>
 
+                                        <td></td>
+
                                         <td class="text-sm text-gray-900 font-light px-3 py-4 whitespace-nowrap">
                                             <a href="/admin/sobre/editar"
                                                 class="text-blue-300 hover:text-indigo-900">Editar</a>

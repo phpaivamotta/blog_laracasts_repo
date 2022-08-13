@@ -6,8 +6,7 @@
     {{-- list of comments --}}
     @foreach ($comments as $comment)
         <form x-data>
-            <article class="flex bg-gray-100 mx-2 lg:mx-0 border border-gray-200 p-6 rounded-xl space-x-4 mt-2" id="comments">
-
+            <article wire:key="item-{{ $comment->id }}" class="flex bg-gray-100 mx-2 lg:mx-0 border border-gray-200 p-6 rounded-xl space-x-4 mt-2" id="comments">
                 <div class="flex-shrink-0">
                     <img src="{{ isset($comment->author->profile_pic)
                         ? asset('storage/' . $comment->author->profile_pic)
@@ -36,9 +35,6 @@
                 </div>
 
             </article>
-
-
-
         </form>
     @endforeach
 

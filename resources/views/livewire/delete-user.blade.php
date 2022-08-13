@@ -64,7 +64,7 @@
                                                         </span>
                                                     </x-slot>
 
-                                                    @foreach ( $user->likes->unique('likeable_id') as $like)
+                                                    @foreach ($user->likes->unique('likeable_id') as $like)
                                                         <p class="block text-left px-3 text-sm leading-6">
                                                             {{ $like->post->title }}
                                                         </p>
@@ -174,12 +174,16 @@
         </div>
     </x-setting>
 
-    @if ($users->count())
-        <x-modal-delete wire:model.defer="modalDelete" :object="$user">usuário
-            <strong>({{ $currentUser->username }})</strong>
-        </x-modal-delete>
-    @endif
+    <div>
+        @if ($users->count())
+            <x-modal-delete wire:model.defer="modalDelete" :object="$user">usuário
+                <strong>({{ $currentUser->username }})</strong>
+            </x-modal-delete>
+        @endif
+    </div>
 
-    <x-flash />
+    <div>
+        <x-flash />
+    </div>
 
 </div>

@@ -85,7 +85,7 @@ These are some of the features only the admin gets to use. Although there are ot
 *   Picture uploads
     + Instead of resizing it with css, cropping it at upload, to avoid deformed images
 * Ckeditor
-    + Working with ckeditor was difficult. The styles ckeditor uses conflicted with tailwind, which required a lot of debugging and manual adjustments.
+    + Working with ckeditor was difficult. The styles ckeditor uses conflicted with tailwind's styles, which required a lot of debugging and manual adjustments.
     + I could not translate the editor itself, though I followed the documentation.
     + The text formatting displayed inside the editor is not consistent with what will be displayed when the text is posted (probably due to ckeditor style conflicts and how the editor treats &nbsp).
 * The ability to like a comment

@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Post;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Intervention\Image\Facades\Image;
 
 class EditPostForm extends Component
 {
@@ -74,7 +75,15 @@ class EditPostForm extends Component
         $attributes = $this->validate();
 
         if (isset($attributes['thumbnail'])) {
-            $attributes['thumbnail'] = $this->thumbnail->store('thumbnails');
+            // image sanitation
+            $image = Image::make($this->thumbnail);
+            $image->resize(400, 400);
+
+            $path = config('filesystems.disks.public.root') . "/thumbnails/" . $this->thumbnail->hashName();
+            $image->save($path);
+
+            // store thumbnail file path in $attributes array
+            $attributes['thumbnail'] = '/thumbnails/' . $this->thumbnail->hashName();
         }
 
         // this 'update' method is not the same as the one created, it belogs to the model class

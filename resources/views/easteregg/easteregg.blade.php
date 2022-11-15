@@ -62,7 +62,7 @@
                     </p>
 
                     <p class="italic font-semibold mb-2">
-                        Ass. Coisa Boa
+                        Ass. Pedrola
                     </p>
 
                     <p class="italic font-semibold">

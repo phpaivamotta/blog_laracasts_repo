@@ -103,7 +103,7 @@
 
                 {{-- expanding links --}}
                 <div x-show="show"
-                    class="bg-pink-200 border-b border-t flex flex-col mt-2 py-2 space-y-2 text-center text-xs"
+                    class="bg-pink-200 border-b border-t flex flex-col mt-2 py-2 space-y-2 text-center text-sm"
                     style="display:none">
 
                     <a href="/sobre"

@@ -37,12 +37,29 @@
         @if (!request()->is('matzá'))
 
             @admin
-                <div class="px-4 py-4 mb-4 bg-pink-200">
+                <div x-data="{open: true}" x-show="open" class="flex items-center justify-between px-4 py-4 mb-4 bg-pink-200">
+
+                    <p></p>
+
                     <a href="/matzá">
                         <p class="text-center text-pink-700 text-lg font-semibold">
                             Bilhete para Coisa Boa. <span class="underline">Clique aqui, por favor.</span>
                         </p>
                     </a>
+
+                    {{-- button --}}
+                    <button x-on:click="open = false">
+                        <svg class="w-5 ml-6 lg:ml-0 mr-2" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="#BE185D" fill-rule="evenodd">
+                                <g id="icon-shape">
+                                    <polygon id="Combined-Shape"
+                                        points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644">
+                                    </polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </button>
                 </div>
             @endadmin
 
@@ -85,7 +102,8 @@
                 </div>
 
                 {{-- expanding links --}}
-                <div x-show="show" class="bg-pink-200 border-b border-t flex flex-col mt-2 py-2 space-y-2 text-center text-xs"
+                <div x-show="show"
+                    class="bg-pink-200 border-b border-t flex flex-col mt-2 py-2 space-y-2 text-center text-xs"
                     style="display:none">
 
                     <a href="/sobre"

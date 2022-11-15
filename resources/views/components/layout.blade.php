@@ -205,7 +205,7 @@
 
             <div class="mt-6">
                 <p class="text-xs lg:text-xs text-gray-700">
-                    © 2022 Poliana Porcelana Blog. Todos os direitos reservados. </p>
+                    © {{ now()->year }} Poliana Porcelana Blog. Todos os direitos reservados. </p>
             </div>
 
         </footer>

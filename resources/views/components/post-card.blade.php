@@ -5,7 +5,7 @@
     <div class="lg:py-6 lg:px-5">
         <div>
             <a href="/posts/{{ $post->slug  }}">
-                <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Blog Post illustration" class="lg:rounded-xl w-full max-w-[400px]">
+                <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Blog Post illustration" class="lg:rounded-xl w-full lg:max-w-[400px]">
             </a>
         </div>
 

@@ -32,9 +32,24 @@
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
-    <section class="flex flex-col lg:px-6 lg:py-8 max-w-7xl min-h-screen mx-auto pt-4">
-        <nav class="lg:flex lg:justify-between lg:items-center">
-            <div class="w-14">
+    <section class="flex flex-col lg:px-6 lg:py-8 max-w-7xl min-h-screen mx-auto">
+
+        @if (!request()->is('matzá'))
+
+            @admin
+                <div class="px-4 py-4 mb-4 bg-pink-200">
+                    <a href="/matzá">
+                        <p class="text-center text-pink-700 text-lg font-semibold">
+                            Bilhete para Coisa Boa. <span class="underline">Clique aqui, por favor.</span>
+                        </p>
+                    </a>
+                </div>
+            @endadmin
+
+        @endif
+
+        <nav class="lg:flex lg:justify-between lg:items-center pt-4">
+            <div class="w-14 hidden lg:flex">
                 <a href="/">
                     <img src="/images/logo_blog_laracasts_nuvem.png" alt="Poliana Porcelana Logo"
                         class="ml-2 lg:ml-0 w-10 md:w-14 lg:w-20">
@@ -44,32 +59,43 @@
             {{-- mobile navbar --}}
             <div x-data={show:false} @click.away="show=false" class="block lg:hidden">
 
-                {{-- navbar sandwich --}}
-                <button @click="show=!show" class="absolute top-5 right-2">
-                    <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" class="w-6">
-                        <g id="Page-1" stroke="none" stroke-width="1" fill="black" fill-rule="evenodd">
-                            <g id="icon-shape">
-                                <path
-                                    d="M0,3 L20,3 L20,5 L0,5 L0,3 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,15 L20,15 L20,17 L0,17 L0,15 Z"
-                                    id="Combined-Shape"></path>
+                <div class="flex items-center justify-between">
+
+                    {{-- logo --}}
+                    <div class="w-14">
+                        <a href="/">
+                            <img src="/images/logo_blog_laracasts_nuvem.png" alt="Poliana Porcelana Logo"
+                                class="ml-2 lg:ml-0 w-10 md:w-14 lg:w-20">
+                        </a>
+                    </div>
+
+                    {{-- navbar sandwich --}}
+                    <button @click="show=!show" class="mr-2">
+                        <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" class="w-6">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="black" fill-rule="evenodd">
+                                <g id="icon-shape">
+                                    <path
+                                        d="M0,3 L20,3 L20,5 L0,5 L0,3 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,15 L20,15 L20,17 L0,17 L0,15 Z"
+                                        id="Combined-Shape"></path>
+                                </g>
                             </g>
-                        </g>
-                    </svg>
-                </button>
+                        </svg>
+                    </button>
+                </div>
 
                 {{-- expanding links --}}
-                <div x-show="show" class="flex flex-col text-center text-white text-lg mt-2 bg-blue-500"
+                <div x-show="show" class="bg-pink-200 border-b border-t flex flex-col mt-2 py-2 space-y-2 text-center text-xs"
                     style="display:none">
 
                     <a href="/sobre"
-                        class="{{ request()->is('sobre') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Sobre</a>
+                        class="{{ request()->is('sobre') ? 'text-blue-500' : '' }}  hover:text-blue-500 drop-shadow-lg">Sobre</a>
                     @auth
                         @admin
                             <a href="/admin/painel"
-                                class="{{ request()->is('admin/painel') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Painel</a>
+                                class="{{ request()->is('admin/painel') ? 'text-blue-500' : '' }}  hover:text-blue-500 drop-shadow-lg">Painel</a>
                             <a href="/admin/posts/criar"
-                                class="{{ request()->is('admin/posts/criar') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Novo
+                                class="{{ request()->is('admin/posts/criar') ? 'text-blue-500' : '' }}  hover:text-blue-500 drop-shadow-lg">Novo
                                 Post</a>
                         @endadmin
 
@@ -79,15 +105,15 @@
                         @endphp
 
                         <a href="/perfil/{{ auth()->user()->username }}"
-                            class="{{ request()->is('perfil/' . $username) ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Perfil</a>
-                        <a href="#" x-data="{}" class="py-2 hover:bg-blue-600 drop-shadow-lg"
+                            class="{{ request()->is('perfil/' . $username) ? 'text-blue-500' : '' }}  hover:text-blue-500 drop-shadow-lg">Perfil</a>
+                        <a href="#" x-data="{}" class=" hover:text-blue-500 drop-shadow-lg"
                             @click.prevent="document.querySelector('#logout-form').submit()">Logout</a>
                     @else
                         <a href="/cadastro"
-                            class="{{ request()->is('cadastro') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Cadastre-se</a>
+                            class="{{ request()->is('cadastro') ? 'text-blue-500' : '' }}  hover:text-blue-500 drop-shadow-lg">Cadastre-se</a>
                         <a href="/login"
-                            class="{{ request()->is('login') ? 'bg-blue-600' : '' }} py-2 hover:bg-blue-600 drop-shadow-lg">Login</a>
-                        <a href="#newsletter" class="py-2 hover:bg-blue-600 drop-shadow-lg">Inscreva-se</a>
+                            class="{{ request()->is('login') ? 'text-blue-500' : '' }}  hover:text-blue-500 drop-shadow-lg">Login</a>
+                        <a href="#newsletter" class=" hover:text-blue-500 drop-shadow-lg">Inscreva-se</a>
                     @endauth
 
                 </div>
@@ -166,13 +192,14 @@
                             </label>
 
                             <div>
-                                <input id="newsletterEmail" name="newsletterEmail" type="text" placeholder="Seu endereço de email"
+                                <input id="newsletterEmail" name="newsletterEmail" type="text"
+                                    placeholder="Seu endereço de email"
                                     class="bg-transparent py-0 pl-4 text-xs lg:text-sm focus-within:outline-none">
                             </div>
                         </div>
 
                         <button type="submit"
-                            class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-0 ml-3 rounded-full text-xs lg:text-sm font-semibold text-white py-2 px-3 lg:py-3 lg:px-8">
+                            class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-0 ml-3 rounded-full text-xs lg:text-sm font-semibold text-white  px-3 lg:py-3 lg:px-8">
                             Inscreva-se
                         </button>
                     </form>

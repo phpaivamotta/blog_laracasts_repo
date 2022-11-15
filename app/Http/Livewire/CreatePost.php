@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Post;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Intervention\Image\Facades\Image;
 
 class CreatePost extends Component
 {
@@ -40,7 +41,7 @@ class CreatePost extends Component
                 $this->tempUrl = null;
             }
         }
-        
+
         $this->validateOnly($propertyName);
     }
 
@@ -50,8 +51,16 @@ class CreatePost extends Component
 
         // append the user_id value to the $attributes array so that a new Post instance can be created
         $attributes['user_id'] = auth()->id();
+
+        // image sanitation
+        $image = Image::make($this->thumbnail);
+        $image->resize(400, 400);
+        
+        $path = config('filesystems.disks.public.root') . "/thumbnails/" . $this->thumbnail->hashName();
+        $image->save($path);
+
         // store thumbnail file path in $attributes array
-        $attributes['thumbnail'] = $this->thumbnail->store('thumbnails');
+        $attributes['thumbnail'] = '/thumbnails/' . $this->thumbnail->hashName();
         // instantiate a new post
         $post = Post::create($attributes);
 

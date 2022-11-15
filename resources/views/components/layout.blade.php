@@ -32,7 +32,7 @@
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
-    <section class="lg:px-6 pt-4 lg:py-8 flex flex-col min-h-screen">
+    <section class="flex flex-col lg:px-6 lg:py-8 max-w-7xl min-h-screen mx-auto pt-4">
         <nav class="lg:flex lg:justify-between lg:items-center">
             <div class="w-14">
                 <a href="/">

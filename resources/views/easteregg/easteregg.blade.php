@@ -41,7 +41,7 @@
 
                     <p class="mb-4">
                         Sinto falta de conversar com você. Sinto falta da nossa sintonia. Sinto falta do seu olho verde
-                        e dos seus dentes perfeitos. Guardo as memórias que vivemos com carinho - e um bocado de
+                        e do seu sorriso perfeito. Guardo as memórias que vivemos com carinho - e um bocado de
                         saudade. Agora, queria estar de volta no flutuante, me enjoando romanticamente. Queria estar
                         passeando na Urca com você. Queria rebobinar esses últimos meses.
                     </p>
